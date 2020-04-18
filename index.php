@@ -76,8 +76,8 @@ if (isset($_POST['submit']))
 <body>
 	<div id="home" class="cont col-12">
 		<div class="open_menu ver_flex col-12">		
-			<div class="spec_offert main_tile_res col-12">
-				<div class="title_res clear_up">OFERTA SPECJALNA</div>
+			<div class="asse main_tile_res col-12">
+				<div class="title_res clear_up">MONTAŻ DEMONTAŻ</div>
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>
 			<div class="rent main_tile_res col-12">
@@ -144,7 +144,7 @@ if (isset($_POST['submit']))
 	</div>	
 	<div class="open_cont clear_down">
 		<div class="menu_cont">
-			<h3>OFERTA SPECJALNA</h3>
+			<h3>MONTAŻ - DEMONTAŻ</h3>
 		</div>
 		<div class="menu_cont">
 			<h3>WYNAJEM</h3>
@@ -156,34 +156,8 @@ if (isset($_POST['submit']))
 			<h3>KONTAKT</h3>
 		</div>
 	</div>
-	<div class="spec_offert_desc col-12">
-		<div class="spec_offert_tile col-12">
-			<div class="pic_spec_offert_tile pic_spec_offert_tile_res"></div>
-			<div class="desc_spec_offert_tile desc_spec_offert_tile_res">
-				<h3>WYNAJEM RUSZTOWAŃ - ELBLĄG</h3>
-				Mega promocja na wynajem rusztowań w Elblągu - <b>już od 0,20 zł netto za m2 (roboczy)</b>.<br />
-				Promocja obejmuje wynajmy powyżej 120 m2 (roboczych).<br />
-				Zadzwoń <b>501 288 265</b> lub <b>513 551 805</b> i sprawdź szczegóły.
-			</div>
-		</div>
-		<div class="spec_offert_tile col-12">
-			<div class="pic_spec_offert_tile pic_spec_offert_tile_res"></div>
-			<div class="desc_spec_offert_tile desc_spec_offert_tile_res">
-				<h3>RUSZTOWANIE ALUMINIOWE - JEZDNE</h3>
-				Rusztowanie aluminiowe jezdne ze schodnią - 7,4m.<br />
-				<b><u>CENA PROMOCYJNA: 7 400,00 zł netto.</u></b><br />
-				Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.
-			</div>
-		</div>
-		<div class="spec_offert_tile col-12">
-			<div class="pic_spec_offert_tile pic_spec_offert_tile_res"></div>
-			<div class="desc_spec_offert_tile desc_spec_offert_tile_res">
-				<h3>KONTENERY SOCJALNE</h3>
-				Kontenery socjalne o wymiarach - ... x ... m.<br />
-				<b><u>CENA PROMOCYJNA: ......,.. zł netto.</u></b><br />
-				Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.<br />
-			</div>
-		</div>
+	<div class="asse_desc col-12">
+	
 	</div>
 	<div class="rent_desc col-12">
 		<div class="rent_tile ver_flex">

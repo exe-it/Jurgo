@@ -122,7 +122,7 @@ ol
 	height:100%;
 }
 
-.spec_offert, .rent, .sell, .we
+.asse, .rent, .sell, .we
 {
 	height:100%;
 	opacity:0.9;
@@ -130,7 +130,7 @@ ol
 	width:25%;
 }
 
-.spec_offert
+.asse
 {
 	background:url("img/main_img/002.jpg") center/cover fixed no-repeat;
 }
@@ -333,7 +333,7 @@ ol
 	}
 }
 
-.spec_offert_desc, .rent_desc, .sell_desc, .we_desc
+.asse_desc, .rent_desc, .sell_desc, .we_desc
 {
 	color:#000;
 	display:none;
@@ -355,7 +355,7 @@ ol
 
 /*SPEC OFFERT DEATAIL*/
 
-.spec_offert_tile
+.asse_tile
 {
 	cursor:pointer;
 	display:flex;
@@ -366,14 +366,14 @@ ol
 	width:98%;
 }
 
-.pic_spec_offert_tile
+.pic_asse_tile
 {
 	border:1px solid #999;
 	flex:0 0 20%;
 	height:100%;
 }
 
-.desc_spec_offert_tile
+.desc_asse_tile
 {
 	background:rgba(255,255,255,0.8);
 	border:1px solid #999;
@@ -382,7 +382,7 @@ ol
 	height:100%;
 }
 
-.desc_spec_offert_tile h3
+.desc_asse_tile h3
 {
 	margin-bottom:0;
 	margin-top:0;
@@ -494,7 +494,7 @@ iframe
 
 /*=========SPEC OFFERT MORE DETAIL===========*/
 
-.wrap_detail_pic_spec_offert
+.wrap_detail_pic_asse
 {
 	display:flex;
 	flex-wrap:wrap;
@@ -502,7 +502,7 @@ iframe
 	width:100%;
 }
 
-.detail_pic_spec_offert
+.detail_pic_asse
 {
 	align-self:flex-end;
 	border:1px solid #999;
@@ -513,12 +513,12 @@ iframe
 	margin-right:1%;
 }
 
-.detail_pic_spec_offert:first-child
+.detail_pic_asse:first-child
 {
 	margin-left:0.5%;
 }
 
-.detail_pic_spec_offert:last-child
+.detail_pic_asse:last-child
 {
 	margin-right:0;
 }
@@ -762,11 +762,11 @@ textarea:-ms-input-placeholder
 		margin-top:20%;
 		text-align:center;
 	}
-	.pic_spec_offert_tile_res
+	.pic_asse_tile_res
 	{
 		flex:0 0 40%;
 	}
-	.desc_spec_offert_tile_res
+	.desc_asse_tile_res
 	{
 		flex:0 0 60%;
 		font-size:3.1vw;

@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded",function()
 {
 	//--===OPEN_MENU===--//
 	
-	const all_class=$('.spec_offert, .rent, .sell, .we');
+	const all_class=$('.asse, .rent, .sell, .we');
 	const all_class_fun=['showFullSpecOffert','showFullRent','showFullSell','showFullWe'];
-	const spec_offert=['jurgo_alu_001.jpg','jurgo_alu_002.jpg','jurgo_alu_003.jpg','jurgo_alu_004.jpg'];
+	const asse=['jurgo_alu_001.jpg','jurgo_alu_002.jpg','jurgo_alu_003.jpg','jurgo_alu_004.jpg'];
 	let back_timer=null;
 	
 	if($(window).width()<951)
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded",function()
 		
 		$(all_class).css('display','');
 		
-		$('.spec_offert_desc').fadeOut(300);
+		$('.asse_desc').fadeOut(300);
 		$('.rent_desc').fadeOut(300);
 		$('.sell_desc').fadeOut(300);
 		$('.we_desc').fadeOut(300);
@@ -55,61 +55,13 @@ document.addEventListener("DOMContentLoaded",function()
 			$('.back-button').on('click',showAllRes);
 		},400);
 		
-		if($(this).hasClass('spec_offert'))
+		if($(this).hasClass('asse'))
 		{
-			$('.spec_offert_desc').stop().animate();
+			$('.asse_desc').stop().animate();
 			$('.menu_cont').eq(0).css('display','block');
-			$('.spec_offert_desc').css('display','block');
+			$('.asse_desc').css('display','block');
 			
-			//THUMBS PIC_SPEC_OFFERT
 			
-			$('.pic_spec_offert_tile').eq(0).css('background','url("img/spec_offert/jurgo_alu_001.jpg") center/100% no-repeat');
-			$('.pic_spec_offert_tile').eq(1).css('background','url("img/spec_offert/jurgo_alu_003.jpg") center/100% no-repeat');
-			$('.pic_spec_offert_tile').eq(2).css('background','url("img/spec_offert/jurgo_alu_002.jpg") center/100% no-repeat');
-			$('.pic_spec_offert_tile').animate({
-				borderWidth:'1px',
-				flex:'0 0 20%',
-				height:'100%',
-				opacity:'1'
-			});
-			
-			//FLASHBOX SPEC_OFFERT AUCTION'S
-			
-			const desc=['<h3>WYNAJEM RUSZTOWAŃ - ELBLĄG</h3>Mega promocja na wynajem rusztowań w Elblągu - <b>już od 0,20 zł netto za m2 (roboczy)</b>.<br />Promocja obejmuje wynajmy powyżej 120 m2 (roboczych).<br />Zadzwoń <b>501 288 265</b> lub <b>513 551 805</b> i sprawdź szczegóły.',
-			'<h3>RUSZTOWANIE ALUMINIOWE - JEZDNE</h3>Rusztowanie aluminiowe jezdne ze schodnią - 7,4m.<br /><b><u>CENA PROMOCYJNA: 7 400,00 zł netto.</u></b><br />Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.',
-			'<h3>KONTENERY SOCJALNE</h3>Kontenery socjalne o wymiarach - ... x ... m.<br /><b><u>CENA PROMOCYJNA: ......,.. zł netto.</u></b><br />Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.<br />'];
-
-			$('.flashbox').on('click',function(e){
-				if(e.target!==this)
-				{
-					$('.flashbox').css('display','block');
-				}
-				else
-				{
-					$('.flashbox').css('display','none');
-				}
-			});	
-
-			for(let i=0;i<$('.spec_offert_tile').length;i++)
-			{
-				$('.spec_offert_tile').eq(i).on('click',function(){
-					$('.flashbox').css('display','block');
-					$('.flash_desc').html(desc[i]);
-					$('.flash_desc').click(function(){
-						$('.flash_desc').css('background','');
-						$('.flash_desc').html(desc[i]);
-					});					
-				});
-			}
-
-			for(let q=0;q<$('.flash_pic').length;q++)
-			{
-				$('.flash_pic').eq(q).css('background','url("img/spec_offert/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
-				$('.flash_pic').eq(q).click(function(){
-					$('.flash_desc').css('background','url("img/spec_offert/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
-					$('.flash_desc').html('');
-				});
-			}	
 		}
 		
 		if($(this).hasClass('rent'))
@@ -161,7 +113,7 @@ document.addEventListener("DOMContentLoaded",function()
 		function showFullSpecOffert()
 		{
 			$('.menu_cont').not(this).css('display','none');
-			$('.spec_offert').trigger('click');
+			$('.asse').trigger('click');
 		}
 		
 		function showFullRent()
@@ -191,7 +143,7 @@ document.addEventListener("DOMContentLoaded",function()
 		$('.see_more').css('display','');
 		$('.menu_cont').fadeIn(300);		
 		$('.back-button').fadeOut(300);
-		$('.spec_offert_desc').fadeOut(300);
+		$('.asse_desc').fadeOut(300);
 		$('.rent_desc').fadeOut(300);
 		$('.sell_desc').fadeOut(300);
 		$('.we_desc').fadeOut(300);
@@ -221,8 +173,8 @@ document.addEventListener("DOMContentLoaded",function()
 		clearTimeout(back_timer);
 		$(all_class).off();
 		$(all_class).stop().animate();
-		$('.spec_offert_tile').stop().animate();
-		$('.pic_spec_offert_tile').stop().animate();
+		$('.asse_tile').stop().animate();
+		$('.pic_asse_tile').stop().animate();
 		$('.see_more').finish().animate();
 		$('.see_more').removeAttr('style');
 		$('.see_more').css('display','none');
@@ -247,38 +199,38 @@ document.addEventListener("DOMContentLoaded",function()
 			$('.back-button').on('click',showAll);
 		},400);
 
-		if($(this).hasClass('spec_offert'))
+		if($(this).hasClass('asse'))
 		{
-			$('.spec_offert_desc').stop().animate();
+			$('.asse_desc').stop().animate();
 			$('.menu_cont').eq(0).css('display','block');
 		
-			$('.spec_offert_desc').delay(300).animate({
+			$('.asse_desc').delay(300).animate({
 				height:'70%',
 				width:'90%'
 			},200,function(){
-				$('.spec_offert_desc').css('display','block');
+				$('.asse_desc').css('display','block');
 			});
 
-			$('.spec_offert_tile').animate({
+			$('.asse_tile').animate({
 				height:'33,3%',
 				width:'98%'
 			},200,function(){
-				$('.spec_offert_tile').css('display','flex');
+				$('.asse_tile').css('display','flex');
 			});
 			
-			//THUMBS PIC_SPEC_OFFERT
+			//THUMBS PIC_asse
 			
-			$('.pic_spec_offert_tile').eq(0).css('background','url("img/spec_offert/jurgo_alu_001.jpg") center/100% no-repeat');
-			$('.pic_spec_offert_tile').eq(1).css('background','url("img/spec_offert/jurgo_alu_003.jpg") center/100% no-repeat');
-			$('.pic_spec_offert_tile').eq(2).css('background','url("img/spec_offert/jurgo_alu_002.jpg") center/100% no-repeat');
-			$('.pic_spec_offert_tile').animate({
+			$('.pic_asse_tile').eq(0).css('background','url("img/asse/jurgo_alu_001.jpg") center/100% no-repeat');
+			$('.pic_asse_tile').eq(1).css('background','url("img/asse/jurgo_alu_003.jpg") center/100% no-repeat');
+			$('.pic_asse_tile').eq(2).css('background','url("img/asse/jurgo_alu_002.jpg") center/100% no-repeat');
+			$('.pic_asse_tile').animate({
 				borderWidth:'1px',
 				flex:'0 0 20%',
 				height:'100%',
 				opacity:'1'
 			});
 			
-			//FLASHBOX SPEC_OFFERT AUCTION'S
+			//FLASHBOX asse AUCTION'S
 			
 			const desc=['<h3>WYNAJEM RUSZTOWAŃ - ELBLĄG</h3>Mega promocja na wynajem rusztowań w Elblągu - <b>już od 0,20 zł netto za m2 (roboczy)</b>.<br />Promocja obejmuje wynajmy powyżej 120 m2 (roboczych).<br />Zadzwoń <b>501 288 265</b> lub <b>513 551 805</b> i sprawdź szczegóły.',
 			'<h3>RUSZTOWANIE ALUMINIOWE - JEZDNE</h3>Rusztowanie aluminiowe jezdne ze schodnią - 7,4m.<br /><b><u>CENA PROMOCYJNA: 7 400,00 zł netto.</u></b><br />Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.',
@@ -295,9 +247,9 @@ document.addEventListener("DOMContentLoaded",function()
 				}
 			});	
 
-			for(let i=0;i<$('.spec_offert_tile').length;i++)
+			for(let i=0;i<$('.asse_tile').length;i++)
 			{
-				$('.spec_offert_tile').eq(i).on('click',function(){
+				$('.asse_tile').eq(i).on('click',function(){
 					$('.flashbox').css('display','block');
 					$('.flash_desc').html(desc[i]);
 					$('.flash_desc').click(function(){
@@ -309,9 +261,9 @@ document.addEventListener("DOMContentLoaded",function()
 
 			for(let q=0;q<$('.flash_pic').length;q++)
 			{
-				$('.flash_pic').eq(q).css('background','url("img/spec_offert/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
+				$('.flash_pic').eq(q).css('background','url("img/asse/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
 				$('.flash_pic').eq(q).click(function(){
-					$('.flash_desc').css('background','url("img/spec_offert/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
+					$('.flash_desc').css('background','url("img/asse/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
 					$('.flash_desc').html('');
 				});
 			}	

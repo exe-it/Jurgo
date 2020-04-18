@@ -335,9 +335,12 @@ ol
 
 .asse_desc, .rent_desc, .sell_desc, .we_desc
 {
+	background-color:rgba(255,255,255,0.8);
 	color:#000;
 	display:none;
+	font-size:1.5vw;
 	height:70%;
+	padding:1%;
 	position:absolute;
 		top:19%;
 		left:0;
@@ -346,51 +349,9 @@ ol
 	width:90%;
 }
 
-.rent_desc, .sell_desc, .we_desc
-{
-	background-color:rgba(255,255,255,0.8);
-	font-size:1.5vw;
-	padding:1%;
-}
+/*RENT && ASSE && SELL*/
 
-/*SPEC OFFERT DEATAIL*/
-
-.asse_tile
-{
-	cursor:pointer;
-	display:flex;
-	flex-wrap:wrap;
-	font-size:1.5vw;
-	height:33.3%;
-	padding:1%;
-	width:98%;
-}
-
-.pic_asse_tile
-{
-	border:1px solid #999;
-	flex:0 0 20%;
-	height:100%;
-}
-
-.desc_asse_tile
-{
-	background:rgba(255,255,255,0.8);
-	border:1px solid #999;
-	border-left:0;
-	flex:0 0 80%;
-	height:100%;
-}
-
-.desc_asse_tile h3
-{
-	margin-bottom:0;
-	margin-top:0;
-}
-
-/*RENT && SELL && WE DETAIL*/
-
-.rent_tile, .sell_tile, .we_tile
+.rent_tile, .asse_tile, .sell_tile, .we_tile
 {
 	display:flex;
 	flex-wrap:wrap;
@@ -398,18 +359,9 @@ ol
 	width:100%;
 }
 
-.desc_rent_tile, .desc_sell_tile
+.desc_rent_tile, .desc_asse_tile, .desc_sell_tile
 {
 	flex:0 0 50%;
-	padding:1%;
-}
-
-.desc_we_tile
-{
-	display:flex;
-	flex:0 0 50%;
-	flex-direction:column;
-	height:100%;
 	padding:1%;
 }
 
@@ -421,7 +373,43 @@ ol
 	text-align:center;
 }
 
+/*ASSE DETAIL*/
+
+.desc_asse_tile
+{
+	height:100%;
+}
+
+.desc_asse_tile h3
+{
+	margin:0 0 1% 1%;
+}
+
+.desc_asse_tile_inv
+{
+	display:flex;
+	flex-wrap:wrap;
+	height:100%;
+}
+
+.pic_asse_tile
+{
+	border:1px solid #999;
+	flex:0 0 31.3%;
+	height:33.3%;
+	margin:1%;
+}
+
 /*WE DETAIL*/
+
+.desc_we_tile
+{
+	display:flex;
+	flex:0 0 50%;
+	flex-direction:column;
+	height:100%;
+	padding:1%;
+}
 
 .text
 {

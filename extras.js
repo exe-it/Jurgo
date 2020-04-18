@@ -60,8 +60,6 @@ document.addEventListener("DOMContentLoaded",function()
 			$('.asse_desc').stop().animate();
 			$('.menu_cont').eq(0).css('display','block');
 			$('.asse_desc').css('display','block');
-			
-			
 		}
 		
 		if($(this).hasClass('rent'))
@@ -104,7 +102,6 @@ document.addEventListener("DOMContentLoaded",function()
 	function showAll()
 	{
 		$(all_class).stop().animate();
-		
 		$('.see_more').eq(0).click(showFullSpecOffert);
 		$('.see_more').eq(1).click(showFullRent);
 		$('.see_more').eq(2).click(showFullSell);
@@ -174,7 +171,6 @@ document.addEventListener("DOMContentLoaded",function()
 		$(all_class).off();
 		$(all_class).stop().animate();
 		$('.asse_tile').stop().animate();
-		$('.pic_asse_tile').stop().animate();
 		$('.see_more').finish().animate();
 		$('.see_more').removeAttr('style');
 		$('.see_more').css('display','none');
@@ -218,24 +214,10 @@ document.addEventListener("DOMContentLoaded",function()
 				$('.asse_tile').css('display','flex');
 			});
 			
-			//THUMBS PIC_asse
+			//FLASHBOX ASSE INVESTMENT GALLERY
 			
-			$('.pic_asse_tile').eq(0).css('background','url("img/asse/jurgo_alu_001.jpg") center/100% no-repeat');
-			$('.pic_asse_tile').eq(1).css('background','url("img/asse/jurgo_alu_003.jpg") center/100% no-repeat');
-			$('.pic_asse_tile').eq(2).css('background','url("img/asse/jurgo_alu_002.jpg") center/100% no-repeat');
-			$('.pic_asse_tile').animate({
-				borderWidth:'1px',
-				flex:'0 0 20%',
-				height:'100%',
-				opacity:'1'
-			});
+			const inv_pic=['img/asse_img/jurgo_alu_000.jpg','img/asse_img/jurgo_alu_001.jpg','img/asse_img/jurgo_alu_002.jpg','img/asse_img/jurgo_alu_003.jpg'];
 			
-			//FLASHBOX asse AUCTION'S
-			
-			const desc=['<h3>WYNAJEM RUSZTOWAŃ - ELBLĄG</h3>Mega promocja na wynajem rusztowań w Elblągu - <b>już od 0,20 zł netto za m2 (roboczy)</b>.<br />Promocja obejmuje wynajmy powyżej 120 m2 (roboczych).<br />Zadzwoń <b>501 288 265</b> lub <b>513 551 805</b> i sprawdź szczegóły.',
-			'<h3>RUSZTOWANIE ALUMINIOWE - JEZDNE</h3>Rusztowanie aluminiowe jezdne ze schodnią - 7,4m.<br /><b><u>CENA PROMOCYJNA: 7 400,00 zł netto.</u></b><br />Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.',
-			'<h3>KONTENERY SOCJALNE</h3>Kontenery socjalne o wymiarach - ... x ... m.<br /><b><u>CENA PROMOCYJNA: ......,.. zł netto.</u></b><br />Zadzwoń <b>510 396 538</b> i sprawdź szczegóły.<br />'];
-
 			$('.flashbox').on('click',function(e){
 				if(e.target!==this)
 				{
@@ -245,28 +227,23 @@ document.addEventListener("DOMContentLoaded",function()
 				{
 					$('.flashbox').css('display','none');
 				}
-			});	
-
-			for(let i=0;i<$('.asse_tile').length;i++)
+			});
+			
+			for(let i=0;i<$('.pic_asse_tile').length;i++)
 			{
-				$('.asse_tile').eq(i).on('click',function(){
+				$('.pic_asse_tile').eq(i).css('background','url("'+inv_pic[i]+'") center/100% no-repeat');
+				$('.pic_asse_tile').eq(i).on('click', function(){
 					$('.flashbox').css('display','block');
-					$('.flash_desc').html(desc[i]);
-					$('.flash_desc').click(function(){
-						$('.flash_desc').css('background','');
-						$('.flash_desc').html(desc[i]);
-					});					
-				});
+					$('.flash_desc').css('background','url("img/asse_img/jurgo_alu_00'+i+'.jpg") center/50% no-repeat')
+				});				
 			}
-
 			for(let q=0;q<$('.flash_pic').length;q++)
 			{
-				$('.flash_pic').eq(q).css('background','url("img/asse/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
+				$('.flash_pic').eq(q).css('background','url("img/asse_img/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
 				$('.flash_pic').eq(q).click(function(){
-					$('.flash_desc').css('background','url("img/asse/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
-					$('.flash_desc').html('');
-				});
-			}	
+					$('.flash_desc').css('background','url("img/asse_img/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
+				});					
+			}			
 		}
 		
 		if($(this).hasClass('rent'))

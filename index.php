@@ -75,11 +75,7 @@ if (isset($_POST['submit']))
 </head>
 <body>
 	<div id="home" class="cont col-12">
-		<div class="open_menu ver_flex col-12">		
-			<div class="asse main_tile_res col-12">
-				<div class="title_res clear_up">MONTAŻ DEMONTAŻ</div>
-				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
-			</div>
+		<div class="open_menu ver_flex col-12">
 			<div class="rent main_tile_res col-12">
 				<div class="quick_desc clear_down">
 					<p><h4>RUSZTOWANIA</p>
@@ -94,6 +90,10 @@ if (isset($_POST['submit']))
 					uziemienia rusztowania</p>
 				</div>
 				<div class="title_res clear_up">WYNAJEM</div>
+				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
+			</div>		
+			<div class="asse main_tile_res col-12">
+				<div class="title_res clear_up">MONTAŻ DEMONTAŻ</div>
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>
 			<div class="sell main_tile_res col-12">
@@ -144,10 +144,10 @@ if (isset($_POST['submit']))
 	</div>	
 	<div class="open_cont clear_down">
 		<div class="menu_cont">
-			<h3>MONTAŻ - DEMONTAŻ</h3>
+			<h3>WYNAJEM</h3>
 		</div>
 		<div class="menu_cont">
-			<h3>WYNAJEM</h3>
+			<h3>MONTAŻ - DEMONTAŻ</h3>
 		</div>
 		<div class="menu_cont">
 			<h3>SPRZEDAŻ</h3>
@@ -155,9 +155,6 @@ if (isset($_POST['submit']))
 		<div class="menu_cont">
 			<h3>KONTAKT</h3>
 		</div>
-	</div>
-	<div class="asse_desc col-12">
-	
 	</div>
 	<div class="rent_desc col-12">
 		<div class="rent_tile ver_flex">
@@ -218,6 +215,26 @@ if (isset($_POST['submit']))
 					?>
 					<input class="font_two_five_res" type="submit" name="submit" value="WYŚLIJ">
 				</form>
+			</div>
+		</div>
+	</div>
+	<div class="asse_desc col-12">
+		<div class="asse_tile ver_flex">
+			<div class="desc_asse_tile font_two_five_res">
+				Wyposażymy Twoją budowę w rusztowania, szalunki, pomosty, kontenery budowlane, ogrodzenia i wiele innych elementów organizujących plac budowy. Możesz je u nas wynająć lub kupić.</p>
+				<p>Doświadczenie, które zdobyliśmy setkami montaży w kraju i zagranicą oraz szeroki asortyment pozwala sprostać potrzebom najbardziej wymagających klientów. Umożliwia zindywidualizowanie konfiguracji rusztowań i szalunków do każdego obiektu i zakresu robót.</p></p>
+				<p>Skontaktuj się z Nami lub odwiedź Naszą siedzibę, a przygotujemy precyzyjnie dostosowaną pod Twoje potrzeby ofertę.</p>
+				<p style="text-align:right"><b>Zapraszamy do współpracy.<br />
+				Zespół JURGO.</b></p>
+			</div>
+			<div class="desc_asse_tile font_two_five_res">
+				<h3>INWESTYCJE</h3>
+				<div class="desc_asse_tile_inv">
+					<div class="pic_asse_tile"></div>				
+					<div class="pic_asse_tile"></div>				
+					<div class="pic_asse_tile"></div>				
+					<div class="pic_asse_tile"></div>				
+				</div>
 			</div>
 		</div>
 	</div>

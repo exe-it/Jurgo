@@ -300,7 +300,7 @@ if (isset($_POST['submit']))
 		<div class="we_tile ver_flex">
 			<div class="desc_we_tile clear_down">
 				<div class="text font_two_five_res">
-					<p style="margin-top:0">Setki wykonanych montaży w kraju i zagranicą, pozwoliło zdobyć ogromne doświadczenie w branży rusztowaniowej. Wiedza i praktyczne doświadczenie pozwala nam na profesjonalną realizację najbardziej wymagających zamówień. Pomagamy opracować rozwiązania techniczne dt. rusztowań, które spełniają wymagania polskich i europejskich norm.</p>
+					<p style="margin-top:0">Setki wykonanych montaży w kraju i zagranicą, pozwoliło zdobyć ogromne doświadczenie w branży rusztowaniowej. Wiedza i praktyczne doświadczenie pozwalają nam na profesjonalną realizację najbardziej wymagających zamówień. Wykonujemy projekty techniczne oraz uziemienia rusztowań. Wystawiamy protokoły odbioru rusztowań. Wykonujemy przeglądy okresowe rusztowań oraz opinie techniczne. Nasze rusztowania posiadają wymagane certyfikaty i atesty.</p>
 				</div>
 				<div class="person_title">Zapraszamy do kontaktu i współpracy</div>
 				<div class="person">

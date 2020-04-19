@@ -1,16 +1,14 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="search" unicode="&#xe800;" d="M643 386q0 103-73 176t-177 74-177-74-73-176 73-177 177-73 177 73 73 177z m286-465q0-29-22-50t-50-21q-30 0-50 21l-191 191q-100-69-223-69-80 0-153 31t-125 84-84 125-31 153 31 152 84 126 125 84 153 31 153-31 125-84 84-126 31-152q0-123-69-223l191-191q21-21 21-51z" horiz-adv-x="928.6" />
+<glyph glyph-name="download" unicode="&#xe800;" d="M714 100q0 15-10 25t-25 11-25-11-11-25 11-25 25-11 25 11 10 25z m143 0q0 15-10 25t-26 11-25-11-10-25 10-25 25-11 26 11 10 25z m72 125v-179q0-22-16-37t-38-16h-821q-23 0-38 16t-16 37v179q0 22 16 38t38 16h259l75-76q33-32 76-32t76 32l76 76h259q22 0 38-16t16-38z m-182 318q10-23-8-39l-250-250q-10-11-25-11t-25 11l-250 250q-17 16-8 39 10 21 33 21h143v250q0 15 11 25t25 11h143q14 0 25-11t10-25v-250h143q24 0 33-21z" horiz-adv-x="928.6" />
 
 <glyph glyph-name="phone" unicode="&#xe801;" d="M786 158q0-15-6-39t-12-38q-11-28-68-60-52-28-103-28-15 0-30 2t-32 7-26 8-31 11-28 10q-54 20-97 47-71 44-148 120t-120 148q-27 43-46 97-2 5-10 28t-12 31-8 26-7 32-2 29q0 52 29 104 31 57 59 68 14 6 38 12t39 6q8 0 12-2 10-3 30-42 6-11 16-31t20-35 17-30q2-2 10-14t12-20 4-16q0-11-16-27t-35-31-34-30-16-25q0-5 3-13t4-11 8-14 7-10q42-77 97-132t131-97q1 0 10-6t14-8 11-5 13-2q10 0 25 16t30 34 31 35 28 16q7 0 15-4t20-12 14-10q14-8 30-17t36-20 30-17q39-19 42-29 2-4 2-12z" horiz-adv-x="785.7" />
-
-<glyph glyph-name="home" unicode="&#xe802;" d="M786 296v-267q0-15-11-25t-25-11h-214v214h-143v-214h-214q-15 0-25 11t-11 25v267q0 1 0 2t0 2l321 264 321-264q1-1 1-4z m124 39l-34-41q-5-5-12-6h-2q-7 0-12 3l-386 322-386-322q-7-4-13-3-7 1-12 6l-35 41q-4 6-3 13t6 12l401 334q18 15 42 15t43-15l136-113v108q0 8 5 13t13 5h107q8 0 13-5t5-13v-227l122-102q6-4 6-12t-4-13z" horiz-adv-x="928.6" />
 
 <glyph glyph-name="facebook" unicode="&#xf09a;" d="M535 843v-147h-87q-48 0-65-20t-17-60v-106h164l-22-165h-142v-424h-171v424h-142v165h142v122q0 104 58 161t155 57q82 0 127-7z" horiz-adv-x="571.4" />
 

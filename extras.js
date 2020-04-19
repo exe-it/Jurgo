@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded",function()
 	//--===OPEN_MENU===--//
 	
 	const all_class=$('.asse, .rent, .sell, .we');
-	const all_class_fun=['showFullSpecOffert','showFullRent','showFullSell','showFullWe'];
+	const all_class_fun=['showFullSpecAsse','showFullRent','showFullSell','showFullWe'];
 	const asse=['jurgo_alu_001.jpg','jurgo_alu_002.jpg','jurgo_alu_003.jpg','jurgo_alu_004.jpg'];
 	let back_timer=null;
 	
@@ -71,7 +71,43 @@ document.addEventListener("DOMContentLoaded",function()
 		{
 			$('.asse_desc').stop().animate();
 			$('.menu_cont').eq(1).css('display','block');
-			$('.asse_desc').css('display','block');
+			$('.asse_desc').delay(300).animate({
+				height:'70%',
+				width:'90%'
+			},200,function(){
+				$('.asse_desc').css('display','block');
+			});
+			
+			//FLASHBOX ASSE INVESTMENT GALLERY
+			
+			const inv_pic=['img/asse_img/jurgo_alu_000.jpg','img/asse_img/jurgo_alu_001.jpg','img/asse_img/jurgo_alu_002.jpg','img/asse_img/jurgo_alu_003.jpg'];
+			
+			$('.flashbox').on('click',function(e){
+				if(e.target!==this)
+				{
+					$('.flashbox').css('display','block');
+				}
+				else
+				{
+					$('.flashbox').css('display','none');
+				}
+			});
+			
+			for(let i=0;i<$('.pic_asse_tile').length;i++)
+			{
+				$('.pic_asse_tile').eq(i).css('background','url("'+inv_pic[i]+'") center/100% no-repeat');
+				$('.pic_asse_tile').eq(i).on('click', function(){
+					$('.flashbox').css('display','block');
+					$('.flash_desc').css('background','url("img/asse_img/jurgo_alu_00'+i+'.jpg") center/100% no-repeat')
+				});				
+			}
+			for(let q=0;q<$('.flash_pic').length;q++)
+			{
+				$('.flash_pic').eq(q).css('background','url("img/asse_img/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
+				$('.flash_pic').eq(q).click(function(){
+					$('.flash_desc').css('background','url("img/asse_img/jurgo_alu_00'+q+'.jpg") center/100% no-repeat');
+				});					
+			}
 		}		
 		
 		if($(this).hasClass('sell'))
@@ -102,21 +138,23 @@ document.addEventListener("DOMContentLoaded",function()
 	function showAll()
 	{
 		$(all_class).stop().animate();
-		$('.see_more').eq(0).click(showFullRent);
-		$('.see_more').eq(1).click(showFullSpecOffert);
-		$('.see_more').eq(2).click(showFullSell);
-		$('.see_more').eq(3).click(showFullWe);
-		
-		function showFullSpecOffert()
-		{
-			$('.menu_cont').not(this).css('display','none');
-			$('.asse').trigger('click');
-		}
+		// $('.menu_cont').css('display','');
+		// $('.see_more').stop();
+		$('.see_more').eq(0).on('click',showFullRent);
+		$('.see_more').eq(1).on('click',showFullSpecAsse);
+		$('.see_more').eq(2).on('click',showFullSell);
+		$('.see_more').eq(3).on('click',showFullWe);
 		
 		function showFullRent()
 		{
 			$('.menu_cont').not(this).css('display','none');
 			$('.rent').trigger('click');
+		}
+		
+		function showFullSpecAsse()
+		{
+			$('.menu_cont').not(this).css('display','none');
+			$('.asse').trigger('click');
 		}
 		
 		function showFullSell()
@@ -175,7 +213,7 @@ document.addEventListener("DOMContentLoaded",function()
 		$('.see_more').removeAttr('style');
 		$('.see_more').css('display','none');
 		$('.quick_desc').css('display','none');
-		$('.menu_cont').css({'display':'none','transition':'display 1s'});		
+		$('.menu_cont').css({'display':'none','transition':'display 1s'});
 		
 		$(all_class).not(this).animate({
 			width:'0'
@@ -211,7 +249,6 @@ document.addEventListener("DOMContentLoaded",function()
 		{
 			$('.asse_desc').stop().animate();
 			$('.menu_cont').eq(1).css('display','block');
-		
 			$('.asse_desc').delay(300).animate({
 				height:'70%',
 				width:'90%'
@@ -255,7 +292,7 @@ document.addEventListener("DOMContentLoaded",function()
 				$('.flash_pic').eq(q).click(function(){
 					$('.flash_desc').css('background','url("img/asse_img/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
 				});					
-			}			
+			}
 		}
 		
 		if($(this).hasClass('sell'))
@@ -281,58 +318,5 @@ document.addEventListener("DOMContentLoaded",function()
 				$('.we_desc').css('display','block');
 			});
 		}
-	}
-
-	//--===RESPONSIVE_MENU===--//
-	
-	$('.ham_menu_tile').on('click',responsiveMenu);
-	
-	function responsiveMenu()
-	{
-		$('.ham_menu').eq(0).toggleClass('bar_1');
-		$('.ham_menu').eq(1).toggleClass('bar_2');
-		$('.ham_menu').eq(2).toggleClass('bar_3');
-		
-		if($('#res_menu').css('display')=='block')
-		{
-			$('#res_menu').css('display','none');
-		}
-		else
-		{
-			$('#res_menu').css('display','block');
-		}
-	}
-
-	//---==LIGHTBOX_GALLERY==---//
-
-	const gall=['01','02','03','04','05','06','07','08'];
-
-	for(let s=0;s<=$('.gallery').length;s++)
-	{
-		$('.gallery').eq(s).on('click',function(){
-			$('#lightbox').css('display','block');
-			$('.lightbox_content').on('click',closeBox);
-			$('#img1').html('<img src="img/gallery/'+gall[s]+'/main/JURGO_rusztowania_'+gall[0]+'.jpg" alt="" />');
-			mini(s);
-		});
-	}
-		
-	function mini(i)
-	{
-		const small_pic=['min1','min2','min3','min4'];
-		$('.bottom_gallery').css('display','block');
-		$('.bottom_gallery').html('<div class="slide"><img src="img/gallery/'+gall[i]+'/min/'+small_pic[0]+'.jpg"></div><div class="slide"><img src="img/gallery/'+gall[i]+'/min/'+small_pic[1]+'.jpg"></div><div class="slide"><img src="img/gallery/'+gall[i]+'/min/'+small_pic[2]+'.jpg"></div><div class="slide"><img src="img/gallery/'+gall[i]+'/min/'+small_pic[3]+'.jpg"></div>');
-		
-		for (let s=0;s<=$('.slide').length;s++)
-		{
-			$('.slide').eq(s).on('click',function(){
-				$('#img1').html('<img src="img/gallery/'+gall[i]+'/main/JURGO_rusztowania_'+gall[s]+'.jpg" alt="" />');
-			});
-		}
-	}
-
-	function closeBox()
-	{
-		$('#lightbox').css('display','none');
 	}
 });

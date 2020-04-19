@@ -86,7 +86,7 @@ ol
 
 .l_topbar
 {
-	flex:0 0 75%;
+	flex:0 0 50%;
 	padding:2% 1%;
 }
 
@@ -108,6 +108,18 @@ ol
 }
 
 .r_topbar a:hover
+{
+	background-color:#4668b3;
+}
+
+.download
+{
+	flex:0 0 25%;
+	padding:2% 0;
+	text-align:center;
+}
+
+.download:hover
 {
 	background-color:#4668b3;
 }
@@ -365,7 +377,7 @@ ol
 	padding:1%;
 }
 
-.desc_rent_tile h2, .desc_sell_tile h2
+.desc_rent_tile h2, .desc_asse_tile h2, .desc_sell_tile h2
 {
 	font-size:2vw;
 	height:10%;
@@ -380,13 +392,9 @@ ol
 	height:100%;
 }
 
-.desc_asse_tile h3
-{
-	margin:0 0 1% 1%;
-}
-
 .desc_asse_tile_inv
 {
+	align-content:flex-start;
 	display:flex;
 	flex-wrap:wrap;
 	height:100%;
@@ -633,44 +641,55 @@ input[type=submit]:hover
 	cursor:pointer;
 }
 
+input[type=checkbox]
+{
+	text-align:right;
+	width:3%;
+}
+
+label
+{
+	margin-right:2%
+}
+
 input::-webkit-input-placeholder
 {
-    color:#ccc;
+    color:#737373;
 }
 
 input:-moz-placeholder
 {
-    color:#ccc;
+	color:#737373;
 }
 
 input::-moz-placeholder
 {
-    color:#ccc;
+	color:#737373;
 }
 
 input:-ms-input-placeholder
 {
-    color:#ccc;
+	color:#737373;
 }
 
 textarea::-webkit-input-placeholder
 {
-	color:#ccc;
+	color:#737373;
 }
 
 textarea:-moz-placeholder
 {
-	color:#ccc;
+	color:#737373;
 }
 
 textarea::-moz-placeholder
 {
-	color:#ccc;
+	color:#737373;
 }
 
 textarea:-ms-input-placeholder
 {
-	color:#ccc;
+	color:#737373;
 }
 
 .error
@@ -759,12 +778,72 @@ textarea:-ms-input-placeholder
 		flex:0 0 60%;
 		font-size:3.1vw;
 	}
-	.font_two_five_res
+	.text_font_res
 	{
-		font-size:2.5vw;
+		font-size:9px;
+	}
+	.small_font_res
+	{
+		font-size:8px;
+	}
+	.mid_font_res
+	{
+		font-size:10px;
+	}
+	.big_font_res, .big_font_res h2
+	{
+		font-size:14px;
+	}
+	.flash_desc_res
+	{
+		height:60%;
+	}
+	.flash_gall_res
+	{
+		height:100px;
+	}
+	.map_res
+	{
+		flex:0 0 50%;
+		margin:1% 1% 0 0;
+		width:97%;
+	}
+	.l_topbar
+	{
+		flex:0 0 73%;
+	}
+	.download
+	{
+		flex:0 0 5%;
+	}
+	.r_topbar
+	{
+		flex:0 0 22%;
 	}
 }
 
-@media only screen and (max-height:450px){
-	.res_h_font{margin:0;}	
+@media only screen and (max-width:400px){
+	.desc_area_tile
+	{
+		flex:0 0 45%;
+	}
+	.mid_font_res
+	{
+		font-size:9px;
+	}
+	input[type=checkbox]
+	{
+		text-align:right;
+		width:2%;
+	}
+	label
+	{
+		margin-right:1%
+	}
+	.map_res
+	{
+		flex:0 0 40%;
+		margin:1% 1% 0 0;
+		width:97%;
+	}
 }

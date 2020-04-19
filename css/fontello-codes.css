@@ -1,5 +1,5 @@
-.icon-search:before{content:'\e800';}/* '' */
-.icon-phone:before{ content:'\e801';}/* '' */
-/* .icon-home:before{content:'\e802';}/* '' */
-.icon-facebook:before {content:'\f09a';}/* '' */
-.icon-mail-alt:before{content:'\f0e0';}/* '' */
+
+.icon-download:before { content: '\e800'; } /* '' */
+.icon-phone:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-mail-alt:before { content: '\f0e0'; } /* '' */

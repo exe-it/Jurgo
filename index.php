@@ -116,7 +116,7 @@ if (isset($_POST['submit']))
 			<div class="navbar">
 				<div class="quickcontact col-12 quick_res">
 					<div class="l_topbar col-10">
-						<i class="icon-phone"></i> 513 551 801 | <a href="mailto:biuro@rusztowania.olsztyn.pl"><i class="icon-mail-alt"></i>  biuro@rusztowania.olsztyn.pl</a>
+						<i class="icon-phone"></i> 513 551 805 | <a href="mailto:biuro@rusztowania-jurgo.pl"><i class="icon-mail-alt"></i>  biuro@rusztowania-jurgo.pl</a>
 					</div>
 					<div class="r_topbar col-2">
 						<div class="clear_down"><a href="https://www.facebook.com/jurgo.rusztowanie/" target="_blank">Znajdź Nas na <i class="icon-facebook"></i>Facebook</a></div>
@@ -160,23 +160,32 @@ if (isset($_POST['submit']))
 		<div class="rent_tile ver_flex">
 			<div class="desc_rent_tile font_two_five_res">
 				W ofercie posiadamy:
-				<ul>
-					<li><b>Rusztowania</b><br />
+				<ul style="margin:0">
+					<li><b>Rusztowania:</b><br />
 						<ul>
 							<li>Ramowe</li>
 							<li>Modułowe</li>
-							<li>Przejezdne (praca do 14 m)</li>
+							<li>Aluminiowe przejezdne</li>
 							<li>Warszawskie</li>
 							<li>Podwieszane</li>
 						</ul>
 					</li>
-					<li><b>Ogrodzenia budowlane oraz eventowe</b></li>
+					<li><b>Ogrodzenia:</b><br />
+						<ul>
+							<li>Pełne</li>
+							<li>Ażurowe</li>
+							<li>Eventowe</li>
+						</ul>
+					</li>
 					<li><b>Szalunki stropowe</b></li>
-					<li><b>Kontenery socjalne</b></li>
-					<li><b>Zsypy do gruzu</b></li>
+					<li><b>Kontenery:</b>
+						<ul>
+							<li>Magazynowe</li>
+							<li>Socjalne</li>
+						</ul>
+					</li>
 				</ul>
-				Oferowane przez naszą firmę narzędzia posiadają wymagane certyfikaty i wykonane są zgodnie z europejskimi normami.
-				Wykwalifikowana kadra gwarantuje wysoką jakość prowadzonych robót, a elastyczność i indywidualne podejście do klienta są głównymi atutami świadczonych przez nas usług.
+				Oferowane materiały posiadają wymagane certyfikaty i atesty. Wykonujemy projekty rusztowań oraz ich uziemienia. Pomagamy wiedzą techniczną i doradztwem. Dowozimy towar na miejsce budowy.<br /><div style="text-align:right;margin-top:1%"> Zapraszamy do kontaktu i współpracy.<br /><b>Jurgo sp. z o.o.</b></div>
 			</div>
 			<div id="offert" class="desc_rent_tile font_two_five_res">
 				<h2>ZŁÓŻ ZAPYTANIE</h2>
@@ -291,9 +300,9 @@ if (isset($_POST['submit']))
 		<div class="we_tile ver_flex">
 			<div class="desc_we_tile clear_down">
 				<div class="text font_two_five_res">
-					<p style="margin-top:0">Dzięki wieloletniej praktyce oraz setek wykonanych montaży w kraju i zagranicą zdobyliśmy doświadczenie, które pozwala nam na profesjonalną realizację najbardziej wymagających zamówień. Nasze rozwiązania technologiczne spełniają wymagania związane z rozmieszczeniem rusztowania na powierzchni lub przestrzeni.</p>
+					<p style="margin-top:0">Setki wykonanych montaży w kraju i zagranicą, pozwoliło zdobyć ogromne doświadczenie w branży rusztowaniowej. Wiedza i praktyczne doświadczenie pozwala nam na profesjonalną realizację najbardziej wymagających zamówień. Pomagamy opracować rozwiązania techniczne dt. rusztowań, które spełniają wymagania polskich i europejskich norm.</p>
 				</div>
-				<div class="person_title">Nasz zespół:</div>
+				<div class="person_title">Zapraszamy do kontaktu i współpracy</div>
 				<div class="person">
 					<div class="person_tile font_two_five_res">
 							<p style="margin-bottom:0"><b>WYNAJEM MONTAŻ DEMONTAŻ</p>
@@ -321,7 +330,7 @@ if (isset($_POST['submit']))
 						<b>JURGO Sp. z o.o.</b><br />
 						ul. Wojska Polskiego 69A/14<br />
 						10-290 Olsztyn<br />
-						<i class="icon-phone"></i> 513 551 801<br />
+						<i class="icon-phone"></i> 513 551 805<br />
 						<i class="icon-phone"></i> 501 288 265<br />
 						<a href="mailto:biuro@jurgo.olsztyn.pl"><i class="icon-mail-alt"></i> biuro@rusztowania-jurgo.pl</a><br />
 					</div>
@@ -332,7 +341,7 @@ if (isset($_POST['submit']))
 					</div>
 				</div>
 				<div class="map">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2357.1964258882304!2d20.4824272268492!3d53.78599144463306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e27ecebe6b0881%3A0x35b103430c241d69!2sAleja+Wojska+Polskiego+69A%2C+11-041+Olsztyn!5e0!3m2!1spl!2spl!4v1564682822050!5m2!1spl!2spl" allowfullscreen></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2357.1968357568526!2d20.4806523160173!3d53.785984149390075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e2796157b96ab7%3A0x602962de7b58224b!2sJURGO%20Sp.%20z%20o.o.!5e0!3m2!1spl!2spl!4v1586967747461!5m2!1spl!2spl" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>

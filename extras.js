@@ -55,17 +55,10 @@ document.addEventListener("DOMContentLoaded",function()
 			$('.back-button').on('click',showAllRes);
 		},400);
 		
-		if($(this).hasClass('asse'))
-		{
-			$('.asse_desc').stop().animate();
-			$('.menu_cont').eq(0).css('display','block');
-			$('.asse_desc').css('display','block');
-		}
-		
 		if($(this).hasClass('rent'))
 		{
 			$('.rent_desc').stop().animate();
-			$('.menu_cont').eq(1).css('display','block');
+			$('.menu_cont').eq(0).css('display','block');
 			$('.rent_desc').delay(300).animate({
 				height:'70%',
 				width:'90%'
@@ -73,6 +66,13 @@ document.addEventListener("DOMContentLoaded",function()
 				$('.rent_desc').css('display','block');
 			});
 		}
+		
+		if($(this).hasClass('asse'))
+		{
+			$('.asse_desc').stop().animate();
+			$('.menu_cont').eq(1).css('display','block');
+			$('.asse_desc').css('display','block');
+		}		
 		
 		if($(this).hasClass('sell'))
 		{
@@ -102,8 +102,8 @@ document.addEventListener("DOMContentLoaded",function()
 	function showAll()
 	{
 		$(all_class).stop().animate();
-		$('.see_more').eq(0).click(showFullSpecOffert);
-		$('.see_more').eq(1).click(showFullRent);
+		$('.see_more').eq(0).click(showFullRent);
+		$('.see_more').eq(1).click(showFullSpecOffert);
 		$('.see_more').eq(2).click(showFullSell);
 		$('.see_more').eq(3).click(showFullWe);
 		
@@ -194,11 +194,23 @@ document.addEventListener("DOMContentLoaded",function()
 		back_timer=setTimeout(function(){
 			$('.back-button').on('click',showAll);
 		},400);
+		
+		if($(this).hasClass('rent'))
+		{
+			$('.rent_desc').stop().animate();
+			$('.menu_cont').eq(0).css('display','block');
+			$('.rent_desc').delay(300).animate({
+				height:'70%',
+				width:'90%'
+			},200,function(){
+				$('.rent_desc').css('display','block');
+			});
+		}
 
 		if($(this).hasClass('asse'))
 		{
 			$('.asse_desc').stop().animate();
-			$('.menu_cont').eq(0).css('display','block');
+			$('.menu_cont').eq(1).css('display','block');
 		
 			$('.asse_desc').delay(300).animate({
 				height:'70%',
@@ -244,18 +256,6 @@ document.addEventListener("DOMContentLoaded",function()
 					$('.flash_desc').css('background','url("img/asse_img/jurgo_alu_00'+q+'.jpg") center/50% no-repeat');
 				});					
 			}			
-		}
-		
-		if($(this).hasClass('rent'))
-		{
-			$('.rent_desc').stop().animate();
-			$('.menu_cont').eq(1).css('display','block');
-			$('.rent_desc').delay(300).animate({
-				height:'70%',
-				width:'90%'
-			},200,function(){
-				$('.rent_desc').css('display','block');
-			});
 		}
 		
 		if($(this).hasClass('sell'))

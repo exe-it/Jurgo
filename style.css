@@ -27,28 +27,9 @@ hr
 	width:100%;
 }
 
-h1
-{
-	font-weight:400;
-}
-
 h3
 {
 	width:100%;
-}
-
-h5
-{
-	font-size:18px;
-	font-weight:700;
-	margin:0;
-	padding:10px 0;
-	text-align:center;
-}
-
-ol
-{
-	list-style-type:none;
 }
 
 /*---==STICKY_MENU==---*/
@@ -115,11 +96,16 @@ ol
 .download
 {
 	flex:0 0 25%;
-	padding:2% 0;
 	text-align:center;
 }
 
-.download:hover
+.download a
+{
+	display:block;
+	padding:8% 0;
+}
+
+.download a:hover
 {
 	background-color:#4668b3;
 }
@@ -176,6 +162,40 @@ ol
 	width:94%;
 }
 
+.blog
+{
+	z-index:3000;
+}
+
+.blog a
+{
+	display:block;
+	width:100%;
+	-o-transition:transform 1s;
+	-moz-transition:transform 1s;
+	-webkit-transition:transform 1s;
+	transition:transform 1s;
+}
+
+.blog a:hover
+{
+	-o-transform:scale(0.8);
+	-ms-transform:scale(0.8);
+	-moz-transform:scale(0.8);
+	-webkit-transform:scale(0.8);
+	transform:scale(0.8);
+	-o-transition:transform 1s;
+	-moz-transition:transform 1s;
+	-webkit-transition:transform 1s;
+	transition:transform 1s;
+}
+
+.blog a img
+{
+	height:50%;
+	width:50%;
+}
+
 .see_more
 {
 	background:#2ea3f2;
@@ -212,6 +232,40 @@ ol
 	width:25%;
 }
 
+.cookie
+{
+	align-items:center;
+	background:#2ea3f2;
+	border-top:1px solid #fff;
+	display:flex;
+	height:3%;
+	justify-content:center;
+	position:absolute;
+		bottom:0;
+	text-align:center;
+	width:100%;
+}
+
+.cookie_confirm
+{
+	border:1px solid #fff;
+	color:#fff;
+	cursor:pointer;
+	flex:0 0 10%;
+	margin-left:1%;
+	text-align:center;
+}
+
+.cookie_confirm:hover
+{
+	background:#fff;
+	color:#000;
+	-o-transition:background 1s,color 1s;
+	-moz-transition:background 1s,color 1s;
+	-webkit-transition:background 1s,color 1s;
+	transition:background 1s,color 1s;
+}
+
 /*BACK BUTTON*/
 
 .back-button
@@ -243,7 +297,7 @@ ol
 .back-button-border
 {
 	animation:button-blink-anim 2s infinite ease-in-out;
-	border:#2ea3f2 1px solid;
+	border:1px solid #2ea3f2;
 	border-radius:50%;
 	height:100%;
 	width:100%;
@@ -384,6 +438,11 @@ ol
 	text-align:center;
 }
 
+.desc_rent_tile ul li
+{
+	margin-bottom:2%;
+}
+
 .desc_rent_tile ul li ul li
 {
 	display:inline;
@@ -392,29 +451,6 @@ ol
 
 .desc_rent_tile ul li ul li:before {
 	content:"• ";
-} 
-
-/*ASSE DETAIL*/
-
-.desc_asse_tile
-{
-	height:100%;
-}
-
-.desc_asse_tile_inv
-{
-	align-content:flex-start;
-	display:flex;
-	flex-wrap:wrap;
-	height:100%;
-}
-
-.pic_asse_tile
-{
-	border:1px solid #999;
-	flex:0 0 31.3%;
-	height:33.3%;
-	margin:1%;
 }
 
 /*WE DETAIL*/
@@ -502,76 +538,6 @@ iframe
 	width:100%;
 }
 
-/*=========SPEC OFFERT MORE DETAIL===========*/
-
-.wrap_detail_pic_asse
-{
-	display:flex;
-	flex-wrap:wrap;
-	height:75%;
-	width:100%;
-}
-
-.detail_pic_asse
-{
-	align-self:flex-end;
-	border:1px solid #999;
-	cursor:pointer;
-	display:none;
-	flex:0 0 24%;
-	height:50%;
-	margin-right:1%;
-}
-
-.detail_pic_asse:first-child
-{
-	margin-left:0.5%;
-}
-
-.detail_pic_asse:last-child
-{
-	margin-right:0;
-}
-
-.flashbox
-{
-	background-color:rgb(0,0,0,0.8);
-	display:none;
-	height:100%;
-	position:absolute;
-		top:0;
-	width:100%;
-	z-index:1998;
-}
-
-.flash_desc
-{
-	background-color:rgb(255,255,255,0.8);
-	font-size:1.5vw;
-	height:51%;
-	margin:5% 5% 0 5%;
-	padding:2%;
-	z-index:2000;
-}
-
-.flash_gall
-{
-	background-color:rgba(255,255,255,1);
-	display:flex;
-	flex-wrap:wrap;
-	height:35%;
-	margin:0 5% 5% 5%;
-	z-index:2999;
-}
-
-.flash_pic
-{
-	cursor:pointer;
-	flex:0 0 25%;
-	height:100%;
-	z-index:3000;
-}
-
 /*--===MAIN_CONTENT===--*/
 
 [class^="container"]
@@ -579,23 +545,6 @@ iframe
 	margin:0 auto;
 	text-align:center;
 	width:80%
-}
-
-.content_b
-{
-	display:inline-block;
-	font-size:32px;
-	margin:20px 0;
-	padding:50px 10px 10px 10px;
-	vertical-align:top;
-	width:45%;
-}
-
-.content ul
-{
-	display:block;
-	padding:10px 0 0 5%;
-	text-align:left;
 }
 
 /*--===FORM===--*/
@@ -738,10 +687,6 @@ textarea:-ms-input-placeholder
 
 /*--===RESPONSIVE_GRID===--*/
 
-@media only screen and (min-width:951px){
-	.clear_up{display:none;}
-}
-
 @media only screen and (max-width:950px){
 	.col-1{width:8.33%;}
 	.col-2{width:16.66%;}
@@ -829,6 +774,7 @@ textarea:-ms-input-placeholder
 	.download
 	{
 		flex:0 0 5%;
+		padding-top:1.5%;
 	}
 	.r_topbar
 	{
@@ -860,4 +806,8 @@ textarea:-ms-input-placeholder
 		margin:1% 1% 0 0;
 		width:97%;
 	}
+}
+
+@media only screen and (min-width:951px){
+	.clear_up{display:none;}
 }

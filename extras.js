@@ -1,5 +1,26 @@
 document.addEventListener("DOMContentLoaded",function()
 {
+	//--===PREV_PAGE[BROWSER_BUTTO]===--//
+	
+	$(document).ready(function(){
+        window.history.pushState(null,"",window.location.href);
+        window.onpopstate=function(){
+            window.history.pushState(null,"",window.location.href='');
+        };
+    });
+	
+	//--===COOKIES===--//
+	
+	$('.cookie_confirm').click(function(){
+		$('.cookie').css('display','none');
+	});
+	
+	//--===BLOG===--//
+	
+	$('.blog').click(function(){
+		event.stopPropagation();	
+	});
+	
 	//--===OPEN_MENU===--//
 	
 	const all_class=$('.asse, .rent, .sell, .we');
@@ -138,8 +159,6 @@ document.addEventListener("DOMContentLoaded",function()
 	function showAll()
 	{
 		$(all_class).stop().animate();
-		// $('.menu_cont').css('display','');
-		// $('.see_more').stop();
 		$('.see_more').eq(0).on('click',showFullRent);
 		$('.see_more').eq(1).on('click',showFullSpecAsse);
 		$('.see_more').eq(2).on('click',showFullSell);

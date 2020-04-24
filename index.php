@@ -78,10 +78,10 @@ if (isset($_POST['submit']))
 		<div class="open_menu ver_flex col-12">
 			<div class="rent main_tile_res col-12">
 				<div class="quick_desc clear_down">
-					<p><h4>RUSZTOWANIA</p>
-					<p>OGRODZENIA</p>
-					<p>SZALUNKI</p>
-					<p>KONTENERY</h4></p>
+					<h4>RUSZTOWANIA</h4>
+					<h4>OGRODZENIA</h4>
+					<h4>SZALUNKI</h4>
+					<h4>KONTENERY</h4>
 					<p>ZAPEWNIAMY OBSŁUGĘ W ZAKRESIE:</p>
 					<p>doradztwa technicznego,<br />
 					projektowania,<br />
@@ -104,8 +104,8 @@ if (isset($_POST['submit']))
 			</div>
 			<div class="sell main_tile_res col-12">
 				<div class="quick_desc clear_down">
-					<p><h4>RUSZTOWANIA</p>
-					<p>OGRODZENIA</h4></p>
+					<h4>RUSZTOWANIA</h4>
+					<h4>OGRODZENIA</h4>
 					<p>Doradzimy i przygotujemy<br />
 					zestaw dostosowany<br />
 					do Twoich potrzeb.</p>
@@ -116,6 +116,13 @@ if (isset($_POST['submit']))
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>
 			<div class="we main_tile_res col-12">
+				<div class="quick_desc clear_down">
+					<div class="blog">
+						<h4>ZAJRZYJ NA NASZ BLOG</h4>
+						<a href="jurgo-blog.php" target="_blank"><img src="img/blog.png" alt="Jurgo Rusztowania BLOG" /></a>
+						<p>Znajdziesz tu przydatne artykuły i informacje.</p>
+					</div>
+				</div>
 				<div class="title_res clear_up">KONTAKT</div>
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>
@@ -124,47 +131,43 @@ if (isset($_POST['submit']))
 					<div class="l_topbar col-10">
 						<i class="icon-phone"></i> 513 551 805 | <a href="mailto:biuro@rusztowania-jurgo.pl"><i class="icon-mail-alt"></i>  biuro@rusztowania-jurgo.pl</a>
 					</div>
-					<div class="download clear_down">Do pobrania <i class="icon-download"></i></div>
-					<div class="download clear_up"><i class="icon-download"></i></div>
+					<div class="download">
+						<div class="clear_down"><a href="download.php" target="_blank">Do pobrania <i class="icon-download"></i></a></div>
+						<div class="clear_up"><a href="download.php"><i class="icon-download"></i></a></div>
+					</div>
 					<div class="r_topbar col-2">
-						
 						<div class="clear_down"><a href="https://www.facebook.com/jurgo.rusztowanie/" target="_blank">Znajdź Nas na <i class="icon-facebook"></i>Facebook</a></div>
 						<div class="clear_up"><a href="https://www.facebook.com/jurgo.rusztowanie/" target="_blank"><i class="icon-facebook"></i>Facebook</a></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="back-button">
-			<div class="back-button-border"></div>
-			<div class="arrow-wrap">
+		<div class="clear_up">
+			<div class="back-button">
+				<div class="back-button-border"></div>
+				<div class="arrow-wrap">
 					<div class="arrow arrow-up"></div>
 					<div class="arrow arrow-down"></div>
+				</div>
 			</div>
-		</div>
-		<div class="flashbox">
-			<div class="flash_desc flash_desc_res"></div>
-			<div class="flash_gall flash_gall_res">
-				<div class="flash_pic"></div>
-				<div class="flash_pic"></div>
-				<div class="flash_pic"></div>
-				<div class="flash_pic"></div>
-			</div>
-		</div>
-	</div>	
-	<div class="open_cont clear_down">
-		<div class="menu_cont">
-			<h3>WYNAJEM</h3>
-		</div>
-		<div class="menu_cont">
-			<h3>RUSZTOWANIA</h3>
-		</div>
-		<div class="menu_cont">
-			<h3>SPRZEDAŻ</h3>
-		</div>
-		<div class="menu_cont">
-			<h3>KONTAKT</h3>
 		</div>
 	</div>
+	<header>
+		<div class="open_cont clear_down">
+			<div class="menu_cont">
+				<h3>WYNAJEM</h3>
+			</div>
+			<div class="menu_cont">
+				<h3>RUSZTOWANIA</h3>
+			</div>
+			<div class="menu_cont">
+				<h3>SPRZEDAŻ</h3>
+			</div>
+			<div class="menu_cont">
+				<h3>KONTAKT</h3>
+			</div>
+		</div>
+	</header>
 	<div class="rent_desc col-12">
 		<div class="rent_tile ver_flex">
 			<div class="desc_rent_tile text_font_res">
@@ -174,12 +177,14 @@ if (isset($_POST['submit']))
 						<ul>
 							<li>Ramowe</li>
 							<li>Modułowe</li>
-							<li>Przejezdne</li><br />						
+							<li>Przejezdne</li>
+						</ul>
+						<ul>
 							<li>Podwieszane</li>
 							<li>Warszawskie</li>
 						</ul>
 					</li>
-					<li><b>Ogrodzenia:</b><br />
+					<li><b>Ogrodzenia:</b>
 						<ul>
 							<li>Pełne</li>
 							<li>Ażurowe</li>
@@ -304,23 +309,15 @@ if (isset($_POST['submit']))
 					<input class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
 				</form>
 			</div>
-			<!--<div class="desc_asse_tile big_font_res">
-				<h2>INWESTYCJE</h2>
-				<div class="desc_asse_tile_inv">
-					<div class="pic_asse_tile"></div>
-					<div class="pic_asse_tile"></div>
-					<div class="pic_asse_tile"></div>
-					<div class="pic_asse_tile"></div>
-				</div>
-			</div>!-->
 		</div>
 	</div>
 	<div class="sell_desc col-12">
 		<div class="sell_tile ver_flex">
 			<div class="desc_sell_tile mid_font_res">
-				Wyposażymy Twoją budowę w rusztowania, szalunki, pomosty, kontenery budowlane, ogrodzenia i wiele innych elementów organizujących plac budowy. Możesz je u nas wynająć lub kupić.</p>
-				<p>Doświadczenie, które zdobyliśmy setkami montaży w kraju i zagranicą oraz szeroki asortyment pozwala sprostać potrzebom najbardziej wymagających klientów. Umożliwia zindywidualizowanie konfiguracji rusztowań i szalunków do każdego obiektu i zakresu robót.</p></p>
-				<p>Skontaktuj się z Nami lub odwiedź Naszą siedzibę, a przygotujemy precyzyjnie dostosowaną pod Twoje potrzeby ofertę.</p>
+				<p>Prowadzimy kompleksową sprzedaż rusztowań i ogrodzeń. Pomożemy Ci w doborze najodpowiedniejszego zestawu, wzglendem Twoich potrzeb.
+				Posiadamy w ofercie rusztowania: ramowe, modułowe i jezdne, a także ogrodzenia: pełne, ażurowe i eventowe.</p>
+				<p>Wieloletnia współpraca z licznymi producentami sprzętu budowlanego, pozwoliła nam osiągnąć atrakcyjne ceny wyjściowe.</p>
+				<p>Skontaktuj się z nami, a przedstawimy Ci wszystkie niezbędne informacje techniczne oraz ceny.</p>
 				<p style="text-align:right"><b>Zapraszamy do współpracy.<br />
 				Jurgo sp. z o.o.</b></p>
 			</div>
@@ -458,10 +455,9 @@ if (isset($_POST['submit']))
 			</div>
 		</div>
 	</div>
-	<!--<footer>
-		<div id="footer">
-			Wszystkie prawa zastrzeżone &copy; 2016-2018 | JURGO
-		</div>
-	</footer>!-->
+	<div class="cookie clear_down">
+		Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. <a href="https://wszystkoociasteczkach.pl/" target="_blank">Dowiedz się więcej</a>
+		<div class="cookie_confirm"><b>ROZUMIEM</b></div>
+	</div>
 </body>
 </html>

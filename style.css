@@ -380,10 +380,19 @@ ol
 .desc_rent_tile h2, .desc_asse_tile h2, .desc_sell_tile h2
 {
 	font-size:2vw;
-	height:10%;
 	margin:0;
 	text-align:center;
 }
+
+.desc_rent_tile ul li ul li
+{
+	display:inline;
+	padding-right:5%;
+}
+
+.desc_rent_tile ul li ul li:before {
+	content:"• ";
+} 
 
 /*ASSE DETAIL*/
 
@@ -431,10 +440,16 @@ ol
 	font-size:1.3vw;
 }
 
+.person_container
+{
+	display:flex;
+	flex-wrap:wrap;
+}
+
 .person
 {
 	display:flex;
-	flex:0 0 70%;
+	flex:0 0 50%;
 	flex-direction:column;
 	height:100%;
 }
@@ -449,20 +464,19 @@ ol
 .contact
 {
 	display:flex;
-	flex:0 0 40%;
-	flex-direction:row;
+	flex:0 0 30%;
 	flex-wrap:wrap;
 	font-size:1.5vw;
 }
 
 .contact_info
 {
-	flex:0 0 60%;
+	flex:0 0 50%;
 }
 
 .company_info
 {
-	flex:0 0 40%;
+	flex:0 0 50%;
 }
 
 .contact a
@@ -477,7 +491,7 @@ ol
 
 .map
 {
-	flex:0 0 60%;
+	flex:0 0 70%;
 }
 
 iframe

@@ -81,8 +81,7 @@ if (isset($_POST['submit']))
 					<p><h4>RUSZTOWANIA</p>
 					<p>OGRODZENIA</p>
 					<p>SZALUNKI</p>
-					<p>KONTENERY</p>
-					<p>ZSYPY</h4></p>
+					<p>KONTENERY</h4></p>
 					<p>ZAPEWNIAMY OBSŁUGĘ W ZAKRESIE:</p>
 					<p>doradztwa technicznego,<br />
 					projektowania,<br />
@@ -93,7 +92,14 @@ if (isset($_POST['submit']))
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>		
 			<div class="asse main_tile_res col-12">
-				<div class="title_res clear_up">MONTAŻ DEMONTAŻ</div>
+				<div class="quick_desc clear_down">
+					<p>Zapewniamy pełną obsługę w zakresie rusztowań.</p>
+					<p>Świadczymy kompleksowe usługi<br />
+					od dowozu, montażu, demontażu po odbiory, przeglądy,<br />
+					projekty dla rusztowań, szalunków i ogrodzeń.</p>
+					<p>Zdobyte doświadczenie w wielu montażach pozwala nam zrealizować każdą inwestycję.</p>
+				</div>
+				<div class="title_res clear_up">RUSZTOWANIA</div>
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>
 			<div class="sell main_tile_res col-12">
@@ -150,7 +156,7 @@ if (isset($_POST['submit']))
 			<h3>WYNAJEM</h3>
 		</div>
 		<div class="menu_cont">
-			<h3>MONTAŻ - DEMONTAŻ</h3>
+			<h3>RUSZTOWANIA</h3>
 		</div>
 		<div class="menu_cont">
 			<h3>SPRZEDAŻ</h3>
@@ -163,14 +169,14 @@ if (isset($_POST['submit']))
 		<div class="rent_tile ver_flex">
 			<div class="desc_rent_tile text_font_res">
 				W ofercie posiadamy:
-				<ul style="margin:0">
+				<ul>
 					<li><b>Rusztowania:</b><br />
 						<ul>
 							<li>Ramowe</li>
 							<li>Modułowe</li>
-							<li>Aluminiowe przejezdne</li>
-							<li>Warszawskie</li>
+							<li>Przejezdne</li><br />						
 							<li>Podwieszane</li>
+							<li>Warszawskie</li>
 						</ul>
 					</li>
 					<li><b>Ogrodzenia:</b><br />
@@ -180,7 +186,10 @@ if (isset($_POST['submit']))
 							<li>Eventowe</li>
 						</ul>
 					</li>
-					<li><b>Szalunki stropowe</b></li>
+					<li><b>Szalunki</b>
+						<ul>
+							<li>Stropowe</li>
+						</ul>
 					<li><b>Kontenery:</b>
 						<ul>
 							<li>Magazynowe</li>
@@ -188,10 +197,11 @@ if (isset($_POST['submit']))
 						</ul>
 					</li>
 				</ul>
-				Oferowane materiały posiadają wymagane certyfikaty i atesty. Wykonujemy projekty rusztowań oraz ich uziemienia. Pomagamy wiedzą techniczną i doradztwem. Dowozimy towar na miejsce budowy.<br /><div style="text-align:right;margin-top:1%"> Zapraszamy do kontaktu i współpracy.<br /><b>Jurgo sp. z o.o.</b></div>
+				<p>Oferowane materiały posiadają wymagane certyfikaty i atesty. Wykonujemy projekty rusztowań oraz ich uziemienia. Pomagamy wiedzą techniczną i doradztwem. Dowozimy towar na miejsce budowy.</p><div style="text-align:right;margin-top:1%"> Zapraszamy do kontaktu i współpracy.<br /><b>Jurgo sp. z o.o.</b></div>
 			</div>
 			<div id="offert" class="desc_rent_tile desc_area_tile big_font_res">
 				<h2>ZŁÓŻ ZAPYTANIE</h2>
+				<h4 style="margin:0;text-align:center">LUB ZADZWOŃ 513551805</h4>
 				<form class="col-12 mid_font_res" method="post">
 					<input class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
 					<?php
@@ -230,7 +240,7 @@ if (isset($_POST['submit']))
 					<input type="checkbox" name="modul">
 					<label for="modul">Modułowe</label>
 					<input type="checkbox" name="fance">
-					<label for="fance">Ogrodzenie</label>
+					<label for="fance">Ogrodzenia</label>
 					<input type="checkbox" name="other">
 					<label for="other">Inne</label>
 					<input class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
@@ -245,9 +255,56 @@ if (isset($_POST['submit']))
 				<p>Doświadczenie, które zdobyliśmy setkami montaży w kraju i zagranicą oraz szeroki asortyment pozwala sprostać potrzebom najbardziej wymagających klientów. Umożliwia zindywidualizowanie konfiguracji rusztowań i szalunków do każdego obiektu i zakresu robót.</p></p>
 				<p>Skontaktuj się z Nami lub odwiedź Naszą siedzibę, a przygotujemy precyzyjnie dostosowaną pod Twoje potrzeby ofertę.</p>
 				<p style="text-align:right"><b>Zapraszamy do współpracy.<br />
-				Zespół JURGO.</b></p>
+				Jurgo sp. z o.o.</b></p>
 			</div>
 			<div class="desc_asse_tile big_font_res">
+				<h2>ZŁÓŻ ZLECENIE</h2>
+				<h4 style="margin:0;text-align:center">LUB ZADZWOŃ 513551805</h4>
+				<form class="col-12 mid_font_res" method="post">
+					<input class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+					<?php
+						if(isset($_SESSION['e_name']))
+						{
+							echo '<div class="error">'.$_SESSION['e_name'].'</div>';
+							unset($_SESSION['e_name']);
+						}
+					?>
+					<input class="mid_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<?php
+						if(isset($_SESSION['e_mail']))
+						{
+							echo '<div class="error">'.$_SESSION['e_mail'].'</div>';
+							unset($_SESSION['e_mail']);
+						}
+					?>
+					<input class="mid_font_res" type="text" name="tel" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<?php
+						if(isset($_SESSION['e_tel']))
+						{
+							echo '<div class="error">'.$_SESSION['e_tel'].'</div>';
+							unset($_SESSION['e_tel']);
+						}
+					?>
+					<textarea class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<?php
+						if(isset($_SESSION['e_bot']))
+						{
+							echo '<div class="error">'.$_SESSION['e_bot'].'</div>';
+							unset($_SESSION['e_bot']);
+						}
+					?>
+					<input type="checkbox" name="frame">
+					<label for="frame">Ramowe</label>
+					<input type="checkbox" name="modul">
+					<label for="modul">Modułowe</label>
+					<input type="checkbox" name="fance">
+					<label for="fance">Jezdne</label>
+					<input type="checkbox" name="other">
+					<label for="other">Warszawskie</label>
+					<input class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
+				</form>
+			</div>
+			<!--<div class="desc_asse_tile big_font_res">
 				<h2>INWESTYCJE</h2>
 				<div class="desc_asse_tile_inv">
 					<div class="pic_asse_tile"></div>
@@ -255,7 +312,7 @@ if (isset($_POST['submit']))
 					<div class="pic_asse_tile"></div>
 					<div class="pic_asse_tile"></div>
 				</div>
-			</div>
+			</div>!-->
 		</div>
 	</div>
 	<div class="sell_desc col-12">
@@ -265,10 +322,11 @@ if (isset($_POST['submit']))
 				<p>Doświadczenie, które zdobyliśmy setkami montaży w kraju i zagranicą oraz szeroki asortyment pozwala sprostać potrzebom najbardziej wymagających klientów. Umożliwia zindywidualizowanie konfiguracji rusztowań i szalunków do każdego obiektu i zakresu robót.</p></p>
 				<p>Skontaktuj się z Nami lub odwiedź Naszą siedzibę, a przygotujemy precyzyjnie dostosowaną pod Twoje potrzeby ofertę.</p>
 				<p style="text-align:right"><b>Zapraszamy do współpracy.<br />
-				Zespół JURGO.</b></p>
+				Jurgo sp. z o.o.</b></p>
 			</div>
 			<div id="offert" class="desc_rent_tile big_font_res">
 				<h2>NAPISZ DO NAS</h2>
+				<h4 style="margin:0;text-align:center">LUB ZADZWOŃ 513551805</h4>
 				<form class="col-12 text_font_res" method="post">
 					<input class="small_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
 					<?php
@@ -307,7 +365,7 @@ if (isset($_POST['submit']))
 					<input type="checkbox" name="modul">
 					<label for="modul">Modułowe</label>
 					<input type="checkbox" name="fance">
-					<label for="fance">Ogrodzenie</label>
+					<label for="fance">Ogrodzenia</label>
 					<input type="checkbox" name="other">
 					<label for="other">Inne</label>
 					<input class="small_font_res" type="submit" name="submit" value="WYŚLIJ">
@@ -322,24 +380,39 @@ if (isset($_POST['submit']))
 					<p style="margin-top:0">Setki wykonanych montaży w kraju i zagranicą, pozwoliło zdobyć ogromne doświadczenie w branży rusztowaniowej. Wiedza i praktyczne doświadczenie pozwalają nam na profesjonalną realizację najbardziej wymagających zamówień. Wykonujemy projekty techniczne oraz uziemienia rusztowań. Wystawiamy protokoły odbioru rusztowań. Wykonujemy przeglądy okresowe rusztowań oraz opinie techniczne. Nasze rusztowania posiadają wymagane certyfikaty i atesty.</p>
 				</div>
 				<div class="person_title clear_down">Zapraszamy do kontaktu i współpracy</div>
-				<div class="person clear_down">
-					<div class="person_tile text_font_res">
-							<p style="margin-bottom:0"><b>WYNAJEM MONTAŻ DEMONTAŻ</p>
-							Robert Jurkiewicz<br />
-							<i class="icon-phone"></i> 501 288 265</b><br />
-							<i class="icon-mail-alt"></i> robert.jurkiewicz@rusztowania-jurgo.pl
+				<div class="person_container">
+					<div class="person clear_down">
+						<div class="person_tile text_font_res">
+								<p style="margin-bottom:0"><b>WYNAJEM, MONTAŻ, DEMONTAŻ</p>
+								<i class="icon-phone"></i> 513 551 805</b><br />
+								<i class="icon-mail-alt"></i> biuro@rusztowania-jurgo.pl
+						</div>
+						<div class="person_tile text_font_res">
+								<p style="margin-bottom:0"><b>DORADZTWO TECHNICZNE, UMOWY</p>
+								Robert Jurkiewicz<br />
+								<i class="icon-phone"></i> 501 288 265</b><br />
+								<i class="icon-mail-alt"></i> robert.jurkiewicz@rusztowania-jurgo.pl
+						</div>
+						<div class="person_tile text_font_res">
+								<p style="margin-bottom:0"><b>SPRZEDAŻ, UMOWY</p>
+								Emil Jurkiewicz<br />
+								<i class="icon-phone"></i> 510 396 538</b><br />
+								<i class="icon-mail-alt"></i> emil.jurkiewicz@rusztowania-jurgo.pl
+						</div>
 					</div>
-					<div class="person_tile text_font_res">
-							<p style="margin-bottom:0"><b>KSIĘGOWOŚĆ</p>
-							Aleksandra Brudzyńska<br />
-							<i class="icon-phone"></i> 537 992 526</b><br />
-							<i class="icon-mail-alt"></i> aleksandra.brudzynska@rusztowania-jurgo.pl
-					</div>
-					<div class="person_tile text_font_res">
-							<p style="margin-bottom:0"><b>MAGAZYN</p>
-							Michał Romańczuk<br />
-							<i class="icon-phone"></i> 444 444 444</b><br />
-							<i class="icon-mail-alt"></i> michał.romanczuk@rusztowania-jurgo.pl
+					<div class="person clear_down">
+						<div class="person_tile text_font_res">
+								<p style="margin-bottom:0"><b>KSIĘGOWOŚĆ, UMOWY</p>
+								Aleksandra Brudzyńska<br />
+								<i class="icon-phone"></i> 537 992 526</b><br />
+								<i class="icon-mail-alt"></i> aleksandra.brudzynska@rusztowania-jurgo.pl
+						</div>
+						<div class="person_tile text_font_res">
+								<p style="margin-bottom:0"><b>MAGAZYN</p>
+								Michał Romańczuk<br />
+								<i class="icon-phone"></i> 444 444 444</b><br />
+								<i class="icon-mail-alt"></i> michał.romanczuk@rusztowania-jurgo.pl
+						</div>
 					</div>
 				</div>
 			</div>
@@ -351,12 +424,12 @@ if (isset($_POST['submit']))
 						10-290 Olsztyn<br />
 						<i class="icon-phone"></i> 513 551 805<br />
 						<i class="icon-phone"></i> 501 288 265<br />
-						<a href="mailto:biuro@jurgo.olsztyn.pl"><i class="icon-mail-alt"></i> biuro@rusztowania-jurgo.pl</a><br />
 					</div>
 					<div class="company_info mid_font_res">
 						<p>NIP: 739 386 88 73<br />
 						REGON: 281614193<br />
-						KRS: 0000520303</p>
+						KRS: 0000520303<br />
+						<a href="mailto:biuro@jurgo.olsztyn.pl"><i class="icon-mail-alt"></i> biuro@rusztowania-jurgo.pl</a></p>
 					</div>
 					<div class="person clear_up">
 						<div class="person_tile mid_font_res">

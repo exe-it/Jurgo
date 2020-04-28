@@ -7,6 +7,10 @@ if (isset($_POST['submit']))
 	$mail=$_POST['mail'];
 	$tel=$_POST['tel'];
 	$msg=$_POST['msg'];
+	$check_f=$_POST['frame'];
+	$check_m=$_POST['modul'];
+	$check_fa=$_POST['fance'];
+	$check_o=$_POST['other'];
 	$msg=htmlspecialchars($msg);
 	$all_ok=true;
 	$headers="From: ".$mail;
@@ -35,12 +39,18 @@ if (isset($_POST['submit']))
 		$_SESSION['e_tel']="Numer telefonu powinien zawierać 9 cyfr bez odstępów np. 123456789";
 	}
 	
+	if(!isset($check_f) && !isset($check_m) && !isset($check_fa) && !isset($check_o))
+	{
+		$all_ok=false;
+		$_SESSION['e_check']="Zaznacz odpowiedni typ";
+	}
+	
 	if($all_ok==true)
 	{
 		$_SESSION['confirmed']='WIADOMOŚĆ WYSŁANA POPRAWNIE.  DZIĘKUJEMY !!!';
 		$to='biuro@rusztowania-jurgo.pl';
 		$subject='Kontakt ze strony www - Zapytanie od '.$name;
-		$message=$name." Pisze: \n".$msg."\n\n"."Kontakt do ".$name.":"."\n"."E-mail: ".$mail."\n"."Telefon: ".$tel;
+		$message=$name." Pisze: \n".$msg."\n\n"."Kontakt do ".$name.":"."\n"."E-mail: ".$mail."\n"."Telefon: ".$tel.$check_f.$check_m.$check_fa.$check_o;
 		if (mail($to, $subject, $message, $headers))
 		{
 			header('Location: sent.php');
@@ -78,26 +88,22 @@ if (isset($_POST['submit']))
 		<div class="open_menu ver_flex col-12">
 			<div class="rent main_tile_res col-12">
 				<div class="quick_desc clear_down">
-					<h4>RUSZTOWANIA</h4>
-					<h4>OGRODZENIA</h4>
-					<h4>SZALUNKI</h4>
-					<h4>KONTENERY</h4>
-					<p>ZAPEWNIAMY OBSŁUGĘ W ZAKRESIE:</p>
-					<p>doradztwa technicznego,<br />
-					projektowania,<br />
-					montażu i demontażu rusztowań,<br />
-					uziemienia rusztowania</p>
+					<h4>RUSZTOWAŃ</h4>
+					<h4>OGRODZEŃ</h4>
+					<h4>SZALUNKÓW</h4>
+					<h4>KONTENERÓW</h4>
 				</div>
 				<div class="title_res clear_up">WYNAJEM</div>
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
 			</div>		
 			<div class="asse main_tile_res col-12">
 				<div class="quick_desc clear_down">
-					<p>Zapewniamy pełną obsługę w zakresie rusztowań.</p>
-					<p>Świadczymy kompleksowe usługi<br />
-					od dowozu, montażu, demontażu po odbiory, przeglądy,<br />
-					projekty dla rusztowań, szalunków i ogrodzeń.</p>
-					<p>Zdobyte doświadczenie w wielu montażach pozwala nam zrealizować każdą inwestycję.</p>
+					<h4>MONTAŻ - DEMONTAŻ</h4>
+					<h4>ODBIORY - PRZEGLĄDY</h4>
+					<h4>UZIEMIENIE</h4>
+					<h4>PROJEKTY</h4>
+					<h4>SPRZEDAŻ</h4>
+					<p>ZAPEWNIAMY PEŁNĄ OBSŁUGĘ</p>
 				</div>
 				<div class="title_res clear_up">RUSZTOWANIA</div>
 				<div class="see_more clear_down">ZOBACZ WIĘCEJ</div>
@@ -205,8 +211,8 @@ if (isset($_POST['submit']))
 				<p>Oferowane materiały posiadają wymagane certyfikaty i atesty. Wykonujemy projekty rusztowań oraz ich uziemienia. Pomagamy wiedzą techniczną i doradztwem. Dowozimy towar na miejsce budowy.</p><div style="text-align:right;margin-top:1%"> Zapraszamy do kontaktu i współpracy.<br /><b>Jurgo sp. z o.o.</b></div>
 			</div>
 			<div id="offert" class="desc_rent_tile desc_area_tile big_font_res">
-				<h2>ZŁÓŻ ZAPYTANIE</h2>
-				<h4 style="margin:0;text-align:center">LUB ZADZWOŃ 513551805</h4>
+				<h2>NAPISZ</h2>
+				<h4 style="margin:0;text-align:center">lub ZADZWOŃ 513 551 805</h4>
 				<form class="col-12 mid_font_res" method="post">
 					<input class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
 					<?php
@@ -248,6 +254,13 @@ if (isset($_POST['submit']))
 					<label for="fance">Ogrodzenia</label>
 					<input type="checkbox" name="other">
 					<label for="other">Inne</label>
+					<?php 
+						if(isset($_SESSION['e_check']))
+						{
+							echo '<div class="error">'.$_SESSION['e_check'].'</div>';
+							unset($_SESSION['e_check']);
+						}
+					?>
 					<input class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
 				</form>
 			</div>
@@ -259,12 +272,12 @@ if (isset($_POST['submit']))
 				Wyposażymy Twoją budowę w rusztowania, szalunki, pomosty, kontenery budowlane, ogrodzenia i wiele innych elementów organizujących plac budowy. Możesz je u nas wynająć lub kupić.</p>
 				<p>Doświadczenie, które zdobyliśmy setkami montaży w kraju i zagranicą oraz szeroki asortyment pozwala sprostać potrzebom najbardziej wymagających klientów. Umożliwia zindywidualizowanie konfiguracji rusztowań i szalunków do każdego obiektu i zakresu robót.</p></p>
 				<p>Skontaktuj się z Nami lub odwiedź Naszą siedzibę, a przygotujemy precyzyjnie dostosowaną pod Twoje potrzeby ofertę.</p>
-				<p style="text-align:right"><b>Zapraszamy do współpracy.<br />
-				Jurgo sp. z o.o.</b></p>
+				<p style="text-align:right">Zapraszamy do kontaktu i współpracy.<br />
+				<b>Jurgo sp. z o.o.</b></p>
 			</div>
 			<div class="desc_asse_tile big_font_res">
-				<h2>ZŁÓŻ ZLECENIE</h2>
-				<h4 style="margin:0;text-align:center">LUB ZADZWOŃ 513551805</h4>
+				<h2>NAPISZ</h2>
+				<h4 style="margin:0;text-align:center">lub ZADZWOŃ 513 551 805</h4>
 				<form class="col-12 mid_font_res" method="post">
 					<input class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
 					<?php
@@ -318,12 +331,12 @@ if (isset($_POST['submit']))
 				Posiadamy w ofercie rusztowania: ramowe, modułowe i jezdne, a także ogrodzenia: pełne, ażurowe i eventowe.</p>
 				<p>Wieloletnia współpraca z licznymi producentami sprzętu budowlanego, pozwoliła nam osiągnąć atrakcyjne ceny wyjściowe.</p>
 				<p>Skontaktuj się z nami, a przedstawimy Ci wszystkie niezbędne informacje techniczne oraz ceny.</p>
-				<p style="text-align:right"><b>Zapraszamy do współpracy.<br />
-				Jurgo sp. z o.o.</b></p>
+				<p style="text-align:right">Zapraszamy do kontaktu i współpracy.<br />
+				<b>Jurgo sp. z o.o.</b></p>
 			</div>
 			<div id="offert" class="desc_rent_tile big_font_res">
-				<h2>NAPISZ DO NAS</h2>
-				<h4 style="margin:0;text-align:center">LUB ZADZWOŃ 513551805</h4>
+				<h2>NAPISZ</h2>
+				<h4 style="margin:0;text-align:center">lub ZADZWOŃ 513 551 805</h4>
 				<form class="col-12 text_font_res" method="post">
 					<input class="small_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
 					<?php
@@ -407,7 +420,7 @@ if (isset($_POST['submit']))
 						<div class="person_tile text_font_res">
 								<p style="margin-bottom:0"><b>MAGAZYN</p>
 								Michał Romańczuk<br />
-								<i class="icon-phone"></i> 444 444 444</b><br />
+								<i class="icon-phone"></i> 514 413 315</b><br />
 								<i class="icon-mail-alt"></i> michał.romanczuk@rusztowania-jurgo.pl
 						</div>
 					</div>

@@ -1,14 +1,61 @@
 document.addEventListener("DOMContentLoaded",function()
-{
+{	
 	//--===PREV_PAGE[BROWSER_BUTTO]===--//
 	
-	$(document).ready(function(){
+	// $(document).ready(function(){
         window.history.pushState(null,"",window.location.href);
         window.onpopstate=function(){
             window.history.pushState(null,"",window.location.href='');
         };
-    });
+    // });
 	
+	//--===HOLD_FORM_REFRESH===--//
+	
+	// $('form').submit(function(e){
+		// e.preventDefault();
+		// console.log('Stop send_form.php');
+		
+		// const name=$('#form-name').val();
+		// const mail=$('#form-mail').val();
+		// const phone=$('#form-phone').val();
+		// const frame=$('#form-frame').val();
+		// const modul=$('#form-modul').val();
+		// const fance=$('#form-fance').val();
+		// const other=$('#form-other').val();
+		// const msg=$('#form-msg').val();
+		// const submit=$('#form-submit').val();
+		// console.log('Take name value:'+name);
+		
+		// if($('#form-frame:checked').length==0)
+		// {
+			// alert('zaznacz checkbox');
+			// $(".type_error").html("Zaznacz odpowiedni typ");
+			// e.preventDefault();
+		// }
+		
+		// $.ajax({
+			// type: 'post',
+			// url: 'send_form.php',
+			// data:{
+				// name: name,
+				// mail: mail,
+				// phone: phone,
+				// frame: frame, //COMMENT
+				// modul: modul, //COMMENT
+				// fance: fance, //COMMENT
+				// other: other, //COMMENT
+				// msg: msg,
+				// submit: submit
+			// },
+			// success: function(data){
+				// $('.name_error').html(data);
+				// $('.mail_error').html(data);
+				// $('.phone_error').html(data);
+				// $('.type_error').html(data);
+			// }
+		// });
+	// });
+
 	//--===COOKIES===--//
 	
 	$('.cookie_confirm').click(function(){

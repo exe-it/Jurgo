@@ -571,6 +571,7 @@ input, textarea
 textarea
 {
 	height:40%;
+	resize:none;
 }
 
 input[type=submit]
@@ -655,7 +656,7 @@ textarea:-ms-input-placeholder
 	color:#737373;
 }
 
-.error
+.name_error, .mail_error, .phone_error, .type_error
 {
 	color:#ff2828;
 }

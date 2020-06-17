@@ -1,66 +1,8 @@
 <?php
 session_start();
 
-if (isset($_POST['submit']))
-{
-	$name=$_POST['name'];
-	$mail=$_POST['mail'];
-	$tel=$_POST['tel'];
-	$msg=$_POST['msg'];
-	$check_f=$_POST['frame'];
-	$check_m=$_POST['modul'];
-	$check_fa=$_POST['fance'];
-	$check_o=$_POST['other'];
-	$msg=htmlspecialchars($msg);
-	$all_ok=true;
-	$headers="From: ".$mail;
-	
-	if((strlen($name)<3)||(strlen($name)>20))
-	{
-		$all_ok=false;
-		$_SESSION['e_name']="Nazwa powinna zawierać od 3 do 20 znaków";
-	}
-	
-	if(!preg_match("/^[a-zA-Z0-9 ]*$/",$name))
-	{
-		$all_ok=false;
-		$_SESSION['e_name']="Nazwa musi zawierać tylko alfanumeryczne znaki";
-	}
-	
-	if(!filter_var($mail,FILTER_VALIDATE_EMAIL))
-	{
-		$all_ok=false;
-		$_SESSION['e_mail']="Nieprawidłowy adres E-Mail";
-	}
-	
-	if(!preg_match("/^(\+[\d]{2})*([\d]{9})/",$tel))
-	{
-		$all_ok=false;
-		$_SESSION['e_tel']="Numer telefonu powinien zawierać 9 cyfr bez odstępów np. 123456789";
-	}
-	
-	if(!isset($check_f) && !isset($check_m) && !isset($check_fa) && !isset($check_o))
-	{
-		$all_ok=false;
-		$_SESSION['e_check']="Zaznacz odpowiedni typ";
-	}
-	
-	if($all_ok==true)
-	{
-		$_SESSION['confirmed']='WIADOMOŚĆ WYSŁANA POPRAWNIE.  DZIĘKUJEMY !!!';
-		$to='biuro@rusztowania-jurgo.pl';
-		$subject='Kontakt ze strony www - Zapytanie od '.$name;
-		$message=$name." Pisze: \n".$msg."\n\n"."Kontakt do ".$name.":"."\n"."E-mail: ".$mail."\n"."Telefon: ".$tel.$check_f.$check_m.$check_fa.$check_o;
-		if (mail($to, $subject, $message, $headers))
-		{
-			header('Location: sent.php');
-		}
-		else
-		{
-			echo "NG";exit();
-		}
-	}
-}
+include 'keys.php';
+
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
@@ -80,8 +22,19 @@ if (isset($_POST['submit']))
 	<link href="/img/favicon.png" rel="shortcut icon" type="image/png" />
 	
 	<script src="jquery-3.3.1.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script>
 	<script src="extras.js"></script>
-	
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145119900-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-145119900-1');
+	</script>
+
 </head>
 <body>
 	<div id="home" class="cont col-12">
@@ -213,8 +166,9 @@ if (isset($_POST['submit']))
 			<div id="offert" class="desc_rent_tile desc_area_tile big_font_res">
 				<h2>NAPISZ</h2>
 				<h4 style="margin:0;text-align:center">lub ZADZWOŃ 513 551 805</h4>
-				<form class="col-12 mid_font_res" method="post">
-					<input class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+				<form id="rent_form" class="col-12 mid_font_res" action="send_form.php" method="post">
+					<input id="form-name" class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+					<div class="name_error"></div>
 					<?php
 						if(isset($_SESSION['e_name']))
 						{
@@ -222,7 +176,8 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_name']);
 						}
 					?>
-					<input class="mid_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<input id="form-mail" class="mid_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<div class="mail_error"></div>
 					<?php
 						if(isset($_SESSION['e_mail']))
 						{
@@ -230,7 +185,8 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_mail']);
 						}
 					?>
-					<input class="mid_font_res" type="text" name="tel" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<input id="form-phone" class="mid_font_res" type="text" name="phone" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<div class="phone_error"></div>
 					<?php
 						if(isset($_SESSION['e_tel']))
 						{
@@ -238,7 +194,15 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_tel']);
 						}
 					?>
-					<textarea class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<textarea id="form-msg" class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+					<script>
+						grecaptcha.ready(function() {
+							grecaptcha.execute('<?php echo SITE_KEY; ?>', {action: 'homepage'}).then(function(token) {
+								document.getElementById('g-recaptcha-response').value=token;
+							});
+						});
+					</script>
 					<?php
 						if(isset($_SESSION['e_bot']))
 						{
@@ -246,22 +210,23 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_bot']);
 						}
 					?>
-					<input type="checkbox" name="frame">
+					<!--<input id="form-frame" type="checkbox" name="frame">
 					<label for="frame">Ramowe</label>
-					<input type="checkbox" name="modul">
+					<input id="form-modul" type="checkbox" name="modul">
 					<label for="modul">Modułowe</label>
-					<input type="checkbox" name="fance">
+					<input id="form-fance" type="checkbox" name="fance">
 					<label for="fance">Ogrodzenia</label>
-					<input type="checkbox" name="other">
+					<input id="form-other" type="checkbox" name="other">
 					<label for="other">Inne</label>
+					<div class="type_error"></div>!-->
 					<?php 
-						if(isset($_SESSION['e_check']))
-						{
-							echo '<div class="error">'.$_SESSION['e_check'].'</div>';
-							unset($_SESSION['e_check']);
-						}
+						// if(isset($_SESSION['e_check']))
+						// {
+							// echo '<div class="error">'.$_SESSION['e_check'].'</div>';
+							// unset($_SESSION['e_check']);
+						// }
 					?>
-					<input class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
+					<input id="form-submit" class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
 				</form>
 			</div>
 		</div>
@@ -278,8 +243,9 @@ if (isset($_POST['submit']))
 			<div class="desc_asse_tile big_font_res">
 				<h2>NAPISZ</h2>
 				<h4 style="margin:0;text-align:center">lub ZADZWOŃ 513 551 805</h4>
-				<form class="col-12 mid_font_res" method="post">
-					<input class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+				<form id="rent_form" class="col-12 mid_font_res" action="send_form.php" method="post">
+					<input id="form-name" class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+					<div class="name_error"></div>
 					<?php
 						if(isset($_SESSION['e_name']))
 						{
@@ -287,7 +253,8 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_name']);
 						}
 					?>
-					<input class="mid_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<input id="form-mail" class="mid_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<div class="mail_error"></div>
 					<?php
 						if(isset($_SESSION['e_mail']))
 						{
@@ -295,7 +262,8 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_mail']);
 						}
 					?>
-					<input class="mid_font_res" type="text" name="tel" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<input id="form-phone" class="mid_font_res" type="text" name="phone" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<div class="phone_error"></div>
 					<?php
 						if(isset($_SESSION['e_tel']))
 						{
@@ -303,7 +271,15 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_tel']);
 						}
 					?>
-					<textarea class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<textarea id="form-msg" class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+					<script>
+						grecaptcha.ready(function() {
+							grecaptcha.execute('<?php echo SITE_KEY; ?>', {action: 'homepage'}).then(function(token) {
+								document.getElementById('g-recaptcha-response').value=token;
+							});
+						});
+					</script>
 					<?php
 						if(isset($_SESSION['e_bot']))
 						{
@@ -311,15 +287,15 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_bot']);
 						}
 					?>
-					<input type="checkbox" name="frame">
+					<!--<input type="checkbox" name="frame">
 					<label for="frame">Ramowe</label>
 					<input type="checkbox" name="modul">
 					<label for="modul">Modułowe</label>
 					<input type="checkbox" name="fance">
 					<label for="fance">Jezdne</label>
 					<input type="checkbox" name="other">
-					<label for="other">Warszawskie</label>
-					<input class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
+					<label for="other">Warszawskie</label>!-->
+					<input id="form-submit" class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
 				</form>
 			</div>
 		</div>
@@ -337,8 +313,9 @@ if (isset($_POST['submit']))
 			<div id="offert" class="desc_rent_tile big_font_res">
 				<h2>NAPISZ</h2>
 				<h4 style="margin:0;text-align:center">lub ZADZWOŃ 513 551 805</h4>
-				<form class="col-12 text_font_res" method="post">
-					<input class="small_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+				<form id="rent_form" class="col-12 mid_font_res" action="send_form.php" method="post">
+					<input id="form-name" class="mid_font_res" type="text" name="name" placeholder="Imię/Nazwa Firmy" onfocus="this.placeholder=''" onblur="this.placeholder='Imię/Nazwa Firmy'" required />
+					<div class="name_error"></div>
 					<?php
 						if(isset($_SESSION['e_name']))
 						{
@@ -346,7 +323,8 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_name']);
 						}
 					?>
-					<input class="small_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<input id="form-mail" class="mid_font_res" type="text" name="mail" placeholder="Twój E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='Twój E-mail'" required />
+					<div class="mail_error"></div>
 					<?php
 						if(isset($_SESSION['e_mail']))
 						{
@@ -354,7 +332,8 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_mail']);
 						}
 					?>
-					<input class="small_font_res" type="text" name="tel" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<input id="form-phone" class="mid_font_res" type="text" name="phone" placeholder="Twój Nr Telefonu" onfocus="this.placeholder=''" onblur="this.placeholder='Twój Nr Telefonu'" required />
+					<div class="phone_error"></div>
 					<?php
 						if(isset($_SESSION['e_tel']))
 						{
@@ -362,7 +341,15 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_tel']);
 						}
 					?>
-					<textarea class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<textarea id="form-msg" class="mess small_font_res" name="msg" placeholder="Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp." onfocus="this.placeholder=''" onblur="this.placeholder='Podaj jak najwięcej informacji technicznych, np. wymiary ścian, wysokość ogrodzenia, itp.'" required></textarea>
+					<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" />
+					<script>
+						grecaptcha.ready(function() {
+							grecaptcha.execute('<?php echo SITE_KEY; ?>', {action: 'homepage'}).then(function(token) {
+								document.getElementById('g-recaptcha-response').value=token;
+							});
+						});
+					</script>
 					<?php
 						if(isset($_SESSION['e_bot']))
 						{
@@ -370,15 +357,15 @@ if (isset($_POST['submit']))
 							unset($_SESSION['e_bot']);
 						}
 					?>
-					<input type="checkbox" name="frame">
+					<!--<input type="checkbox" name="frame">
 					<label for="frame">Ramowe</label>
 					<input type="checkbox" name="modul">
 					<label for="modul">Modułowe</label>
 					<input type="checkbox" name="fance">
 					<label for="fance">Ogrodzenia</label>
 					<input type="checkbox" name="other">
-					<label for="other">Inne</label>
-					<input class="small_font_res" type="submit" name="submit" value="WYŚLIJ">
+					<label for="other">Inne</label>!-->
+					<input id="form-submit" class="mid_font_res" type="submit" name="submit" value="WYŚLIJ">
 				</form>
 			</div>
 		</div>

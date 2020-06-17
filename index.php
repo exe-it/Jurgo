@@ -10,7 +10,6 @@ include 'keys.php';
 	<title>JURGO Sp. z o.o. wynajem i sprzedaż rusztowań</title>
 	
 	<meta charset="utf-8" />
-	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="Wynajem i sprzedaż rusztowań, szalunków oraz ogrodzeń" />
 	<meta name="keywords" content="rusztowania,szalunki,ogrodzenia,sprzedaż rusztowań,sprzedaz rusztowan,wynajem rusztowan,wynajem rusztowań,wynajem rusztowan warmia i mazury,wynajem ogorodzeń,rusztowania olsztyn,rusztowania elblag,rusztowania malbork,wynajem ogrodzen,rusztowania warmia,szalunki,rusztowania olsztyn" />

@@ -1,5 +1,24 @@
 document.addEventListener("DOMContentLoaded",function()
 {	
+
+	//--===COOKIES===--//
+	
+	const cookie_clear=Cookies.get('cookie_clear');
+	const inFifteenMinutes=new Date(new Date().getTime() + 15 * 60 * 1000);
+	
+	if(cookie_clear==1)
+	{
+		$('.cookie').css('display','none');
+	}
+	else
+	{
+		$('.cookie_confirm').click(function(){
+			$('.cookie').css('display','none');
+			
+			Cookies.set('cookie_clear',1,{expires: inFifteenMinutes});
+		});
+	}
+	
 	//--===PREV_PAGE[BROWSER_BUTTO]===--//
 	
 	// $(document).ready(function(){
@@ -56,11 +75,9 @@ document.addEventListener("DOMContentLoaded",function()
 		// });
 	// });
 
-	//--===COOKIES===--//
+
 	
-	$('.cookie_confirm').click(function(){
-		$('.cookie').css('display','none');
-	});
+
 	
 	//--===BLOG===--//
 	

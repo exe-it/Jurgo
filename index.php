@@ -21,6 +21,7 @@ include 'keys.php';
 	<link href="/img/favicon.png" rel="shortcut icon" type="image/png" />
 	
 	<script src="jquery-3.3.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script>
 	<script src="extras.js"></script>
 
@@ -444,7 +445,7 @@ include 'keys.php';
 							<p style="margin-bottom:0"><b>MAGAZYN</p>
 							Michał Romańczuk<br />
 							<i class="icon-phone"></i> 444 444 444</b><br />
-							<i class="icon-mail-alt"></i> michał.romanczuk@rusztowania-jurgo.pl
+							<i class="icon-mail-alt"></i> michal.romanczuk@rusztowania-jurgo.pl
 						</div>
 					</div>
 				</div>
